@@ -67,3 +67,5 @@ D:\.NET Core\eCommerce\API\obj\Debug\net5.0\API.dll
 D:\.NET Core\eCommerce\API\obj\Debug\net5.0\ref\API.dll
 D:\.NET Core\eCommerce\API\obj\Debug\net5.0\API.pdb
 D:\.NET Core\eCommerce\API\obj\Debug\net5.0\API.genruntimeconfig.cache
+D:\.NET Core\eCommerce\API\bin\Debug\net5.0\AutoMapper.dll
+D:\.NET Core\eCommerce\API\bin\Debug\net5.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
