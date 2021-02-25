@@ -1,0 +1,232 @@
+.pre-nav {
+    padding: 5px;
+    width: 100%;
+    background-color: rgb(0, 0, 0);
+    font-weight: bold;
+    font-size: small;
+    text-align: center;
+    color: #fff;
+}
+.btn {
+    background-color: transparent;
+    border-radius: 50%;
+    border: none;
+    color: black;
+    font-size: 20px;
+    border-color: transparent;
+    cursor: pointer;
+}
+.btn:focus {
+    border-color: inherit;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+.navbar-links {
+    display: flex;
+    align-items: center;
+}
+.navbar {
+    display: flex;
+    align-items: center;
+}
+.navbar-links ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+.navbar-links li a {
+    text-align: center;
+    align-items: center;
+    text-decoration: none;
+    display: block;
+}
+.navbar-links a:hover {
+    padding: 5px;
+}
+.navbar-links li {
+    list-style: none;
+}
+.search-link {
+    display: flex;
+}
+.search-link2 {
+    display: flex;
+}
+.nav-dark {
+    color:rgb(0, 0, 0);
+}
+.nav-container{
+    padding-left: 5%;
+    padding-right: 10%;
+    background: white;
+    align-items: center;
+}
+.hamburger-menu{
+    padding-left: 10%;
+    padding-right: 10%;
+    background: white;
+    align-items: center;
+}
+.hamburger-menu ul {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    flex-direction: column;
+}
+.hamburger-menu li {
+    text-align: center;
+    list-style: none;
+}
+.hamburger-menu li a {
+    padding: 1rem;
+    color: black;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+}
+.hamburger-menu li :hover {
+    background-color: black;
+    color: white;
+}
+.hamburger{
+    position: absolute;
+    font-size: 1.6rem;
+    color: black;
+}
+.logo {
+    color: rgb(0, 0, 0);
+    font-family: 'mottek', 'arial', sans-serif;
+}
+.logo-wrapper {
+    width: 60px;
+}
+.carousel-item.active {
+    display:block;
+}
+.toggle-button {
+    position: relative;
+    top: .75rem;
+    right: .55rem;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 20px;
+    height: 21px;
+}
+.toggle-button .bar {
+    height: 3px;
+    width: 100%;
+    background-color: black;
+    border-radius: 10px;
+}
+.toggle-button :hover {
+    cursor: pointer;
+}
+.cart-link {
+    padding-top: 3%;
+    display: flex;
+}
+.user-link {
+    padding-top: 3%;
+    display: flex;
+}
+.cart-no {
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background: rgba(252, 0, 0, 0.63);
+    font-weight: bold;
+    font-size: 0.7em;
+    text-align: center;
+    top: 5px;
+    right: 2px;
+}
+.responsive{
+    display: flex;
+}
+@media (max-width: 1132px) {
+     .toggle-button {
+         display: flex;
+     }
+     .navbar-links {
+        display: none;
+        width: 100%;
+    }
+    .navbar-links li {
+        text-align: center;
+    }
+    .navbar-links ul {
+        width: 100%;
+        flex-direction: column;
+    }
+    .nabar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .nav-container {
+        padding-right: 0%;
+        padding-left: 10%;
+    }
+}
+@media(max-width: 558px){
+    .right{
+        justify-content: flex-end; 
+        display: flex; 
+        padding-top: 2%;
+    }
+    .cart-no{
+        display: none;
+    }
+    .search-link {
+        padding-top: 3%;
+        display: none;
+    }
+    .cart-link{
+        padding-top: 3%;
+        display: flex;  
+    }
+    .user-link {
+        padding-top: 3%;
+    }
+    .nav-container {
+        padding-left: 10%;
+    }
+}
+@media(max-width: 442px){
+    .search-link2 {
+        display: none;
+        padding-top: 3%;
+    }
+    .cart-link{
+        display: flex;
+        padding-top: 3%;
+    }
+    .user-link {
+        padding-top: 3%;
+        padding-left: 40%;
+    }
+}
+@media(max-width: 414px){
+    .cart-link {
+        justify-content: flex-end; 
+        display: flex;
+        padding-top: 20%;
+    }
+    .user-link {
+        display: none;
+    }
+}
+@media(max-width: 393px){
+    .responsive {
+        display: none;
+    }
+    .cart-link {
+        display: none;
+    }
+    .logo {
+        align-items: center;
+        padding-left: 25%;
+    }
+}
