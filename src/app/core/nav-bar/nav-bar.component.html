@@ -2,20 +2,26 @@
     <div class="pre-nav">
         <mdb-carousel class="carousel slide carousel-fade" [isControls]="false" [animation]="'fade'">
             <mdb-carousel-item>
-                <a><fa-icon [icon]="faTruck"></fa-icon> {{stringArray[0]}}</a>
+                <a>
+                    <fa-icon [icon]="faTruck"></fa-icon> {{stringArray[0]}}
+                </a>
             </mdb-carousel-item>
             <mdb-carousel-item>
-                <a><fa-icon [icon]="faTruck"></fa-icon> {{stringArray[1]}}</a>
+                <a>
+                    <fa-icon [icon]="faTruck"></fa-icon> {{stringArray[1]}}
+                </a>
             </mdb-carousel-item>
             <mdb-carousel-item>
-              <a>{{stringArray[2]}}</a>
+                <a>{{stringArray[2]}}</a>
             </mdb-carousel-item>
-          </mdb-carousel>
+        </mdb-carousel>
     </div>
     <div>
         <div *ngIf="isOpened" class="hamburger-menu">
-            <span class="hamburger toggle-button" (click)="isOpen()" style="z-index: 1;"><fa-icon [icon]="faTimes"></fa-icon></span>
-            <a class="navbar-brand nav-dark logo" href="#" style="padding-left: 35%;">Vlad Pidar  <img class="logo-wrapper" src="../../assets/image/logo.png"></a>
+            <span class="hamburger toggle-button" (click)="isOpen()" style="z-index: 1;">
+                <fa-icon [icon]="faTimes"></fa-icon>
+            </span>
+            <a class="navbar-brand nav-dark logo" href="#" style="padding-left: 40%;">Krooter</a>
             <ul>
                 <li>
                     <a href="#">MAN</a>
@@ -47,13 +53,16 @@
             <div *ngIf="!isOpened" class="row">
                 <div class="col-1">
                     <a href="#" class="toggle-button hamburger" (click)="isOpen()">
-                        <span><fa-icon [icon]="faBars"></fa-icon></span>
+                        <span>
+                            <fa-icon [icon]="faBars"></fa-icon>
+                        </span>
                     </a>
                 </div>
                 <div class="col-1.5">
                     <div class="d-inline-flex">
                         <div>
-                            <a class="navbar-brand nav-dark logo" href="#">Vlad Pidar  <img class="logo-wrapper" src="../../assets/image/logo.png"></a>
+                            <a class="navbar-brand nav-dark logo" href="#">Krooter <img class="logo-wrapper"
+                                    src="../../assets/image/logo.png"></a>
                         </div>
                     </div>
                 </div>
@@ -72,11 +81,19 @@
                 <div class="col position-relative responsive" style="justify-content: flex-end;">
                     <div class="navbar-brand nav-dark d-inline-flex position-relative">
                         <div class="form-outline search-link" style="padding-top: 2%;">
-                            <input id="search-input" type="search" id="form1" class="form-control shadow-none" placeholder="Search" style="width: 150px; height: 30px; z-index: 1;"/>
+                            <input #search id="search-input" type="search" id="form1" class="form-control shadow-none"
+                                placeholder="Search" style="width: 150px; height: 30px; z-index: 1;" />
                         </div>
-                        <button class='btn'><fa-icon class="search-link2" [icon]="faSearch" style="padding-right: 15%; padding-left: 5%; padding-top: 3%;" href="#"></fa-icon></button>
-                        <button class='btn'><fa-icon href="#" class="user-link" [icon]="faUser"></fa-icon></button>
-                        <button class='btn'><fa-icon class="cart-link" [icon]="faShoppingCart" style="padding-right: 15%;"></fa-icon></button>
+                        <button class='btn'>
+                            <fa-icon class="search-link2" [icon]="faSearch"
+                                style="padding-right: 15%; padding-left: 5%; padding-top: 3%;" href="#"></fa-icon>
+                        </button>
+                        <button class='btn'>
+                            <fa-icon href="#" class="user-link" [icon]="faUser"></fa-icon>
+                        </button>
+                        <button class='btn'>
+                            <fa-icon class="cart-link" [icon]="faShoppingCart" style="padding-right: 15%;"></fa-icon>
+                        </button>
                         <div class="cart-no" *ngIf="cartItems != 0">{{cartItems}}</div>
                     </div>
                 </div>
@@ -84,4 +101,3 @@
         </div>
     </div>
 </div>
-

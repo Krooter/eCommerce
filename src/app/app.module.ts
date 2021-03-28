@@ -4,26 +4,21 @@ import { HttpClientModule } from '@angular/common/http'
 
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { NavBarComponent } from './nav-bar/nav-bar.component';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
-import { MDBBootstrapModule } from 'angular-bootstrap-md';
-import { HomeComponent } from './home/home.component';
-//import { MatMenuModule } from '@angular/material/menu';
+import { CoreModule } from './core/core.module';
+import { ShopModule } from './shop/shop.module';
+import { HomeModule } from './home/home.module';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    NavBarComponent,
-    HomeComponent,
+    AppComponent
   ],
   imports: [
     BrowserModule,
     NgbModule,
-    FontAwesomeModule,
-    BrowserAnimationsModule,
-    MDBBootstrapModule.forRoot(),
     HttpClientModule,
+    CoreModule,
+    ShopModule,
+    HomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

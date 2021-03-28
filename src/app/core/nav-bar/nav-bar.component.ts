@@ -1,5 +1,6 @@
-import { AfterViewInit, Component, HostBinding, HostListener, OnInit, Renderer2 } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { faTruck, faShoppingCart, faSearch, faUser, faTimes, faBars } from '@fortawesome/free-solid-svg-icons';
+import { ShopParams } from 'src/app/shared/_models/shopParams';
 
 @Component({
   selector: 'app-nav-bar',
@@ -17,10 +18,9 @@ export class NavBarComponent implements OnInit {
   isOpened = false;
   stringArray = ["30-DAY RETURNS AND FREE SHIPPING ON ORDERS $49+", "FREE SHIPPING & RETURNS WITH KROOTS UNLOCKED", "NANO X1. AVAILABLE NOW. GET IN ON IT."];
 
-  constructor(private render: Renderer2) { }
+  constructor() { }
 
   ngOnInit(): void {
-
   }
 
   isOpen(){
@@ -39,6 +39,5 @@ export class NavBarComponent implements OnInit {
         'hamburger-menu': true
       }
     }
-
   }
 }
