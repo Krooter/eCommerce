@@ -1,7 +1,23 @@
 .btn-group {
-    width: 100%
-}
+    width: 100%}
 
 .btn {
-    width: 50%;
+    width: 50%;}
+
+.item-title{
+    text-decoration: none;
+    color: black;
+    :hover {
+      color: #f79548;}
 }
+
+.new {
+    position: absolute;
+    left: 10px;
+    top: 10px;}
+
+.announce {
+    position: absolute;
+    left: 10px;
+    top: 30px;
+    background-color: #f79548 !important;}

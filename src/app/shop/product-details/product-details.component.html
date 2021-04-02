@@ -1,0 +1,88 @@
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+</head>
+<body>
+    <div class="container-detail" *ngIf="product" style="margin-top: 100px;">
+        <div class="card">
+            <div class="container-fliud">
+                <div class="wrapper row">
+                    <div class="preview col-md-6 col-lg-4"> 
+                        <div class="tab-content">
+                          <div class="tab-pane active" id="pic-1"><img src="{{product.pictureUrl}}" /></div>
+                          <div class="tab-pane" id="pic-2"><img src="{{product.pictureUrl}}" /></div>
+                          <div class="tab-pane" id="pic-3"><img src="{{product.pictureUrl}}" /></div>
+                          <div class="tab-pane" id="pic-4"><img src="{{product.pictureUrl}}" /></div>
+                          <div class="tab-pane" id="pic-5"><img src="{{product.pictureUrl}}" /></div>
+                        </div>
+                        <ul class="preview-thumbnail nav nav-tabs">
+                          <li class="active"><a data-target="#pic-1" data-toggle="tab"><img src="{{product.pictureUrl}}" /></a></li>
+                          <li><a data-target="#pic-2" data-toggle="tab"><img src="{{product.pictureUrl}}" /></a></li>
+                          <li><a data-target="#pic-3" data-toggle="tab"><img src="{{product.pictureUrl}}" /></a></li>
+                          <li><a data-target="#pic-4" data-toggle="tab"><img src="{{product.pictureUrl}}" /></a></li>
+                          <li><a data-target="#pic-5" data-toggle="tab"><img src="{{product.pictureUrl}}" /></a></li>
+                        </ul>
+                    </div>
+                    <div class="details col-md-6 col-lg-8">
+                        <h3 class="product-title">{{product.name}}</h3>
+                        <div class="rating">
+                            <div class="">
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                            </div>
+                            <span class="">41 reviews</span>
+                        </div>
+                        <p class="product-description">Suspendisse quos? Tempus cras iure temporibus? Eu laudantium cubilia sem sem! Repudiandae et! Massa senectus enim minim sociosqu delectus posuere.</p>
+                        <h4 class="price">price: <strong>{{product.price | currency}}</strong></h4>
+                        <h5 class="sizes">sizes:
+                            <span class="size" data-toggle="tooltip" title="small">s</span>
+                            <span class="size" data-toggle="tooltip" title="medium">m</span>
+                            <span class="size" data-toggle="tooltip" title="large">l</span>
+                            <span class="size" data-toggle="tooltip" title="xtra large">xl</span>
+                        </h5>
+                        <h5 class="colors">colors:
+                            <span class="color orange not-available" data-toggle="tooltip" title="Not In store"></span>
+                            <span class="color green"></span>
+                            <span class="color blue"></span>
+                        </h5>
+                        <div class="action d-flex justify-content-start align-items-center align-items-end">
+                            <button (click)="decrement()" class="mr-1 btn-incr-decr"><i class="fa fa-minus-circle"></i></button>
+                            <span class="font-weight-bold" style="font-size: 1.5em;">{{amount}}</span>
+                            <button (click)="increment()" class="btn-incr-decr ml-1"><i class="fa fa-plus-circle"></i></button>
+                            <button class="btn-detail ml-2" type="button"><span class="fa fa-shopping-cart"></span></button>
+                            <button class="btn-detail ml-2" type="button"><span class="fa fa-heart"></span></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+<section class="container-detail">
+    <div class="row">
+      <div class="col-md-3 col-xl-3 col-md-6" *ngFor="let item of products">
+        <mdb-card [cascade]="true" style="height: 80%;">
+          <mdb-badge class="new" [pill]="true" [danger]=true>NEW</mdb-badge>
+          <mdb-badge class="announce" [pill]="true" [danger]=true>SALE</mdb-badge>
+          <div class="view overlay waves-light" mdbWavesEffect>
+            <a href="/shop/{{item.id}}">
+              <mdb-card-img src="{{item.pictureUrl}}" style="outline: none;"></mdb-card-img>
+            </a> 
+          </div>
+          <mdb-card-body class="text-center align-items-center">
+            <mdb-card-title>
+              <a class="mask rgba-white-slight item-title" href="/shop/{{item.id}}"><p>{{item.name}}</p></a>
+            </mdb-card-title>
+            <p>
+                <strong style="color: #33a544;">{{item.price | currency}}</strong>
+            </p>
+          </mdb-card-body>
+        </mdb-card>
+      </div>
+    </div>
+  </section>
+</body>

@@ -7,18 +7,21 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CoreModule } from './core/core.module';
 import { ShopModule } from './shop/shop.module';
 import { HomeModule } from './home/home.module';
+import { AppRoutingModule } from './app-routing.module';
+import { MDBBootstrapModule } from 'angular-bootstrap-md';
 
 @NgModule({
   declarations: [
     AppComponent
   ],
   imports: [
+    AppRoutingModule,
     BrowserModule,
     NgbModule,
     HttpClientModule,
     CoreModule,
-    ShopModule,
-    HomeModule
+    HomeModule,
+    MDBBootstrapModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

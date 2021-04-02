@@ -21,38 +21,38 @@
             <span class="hamburger toggle-button" (click)="isOpen()" style="z-index: 1;">
                 <fa-icon [icon]="faTimes"></fa-icon>
             </span>
-            <a class="navbar-brand nav-dark logo" href="#" style="padding-left: 40%;">Krooter</a>
+            <a class="navbar-brand nav-dark logo" style="padding-left: 40%;">Krooter</a>
             <ul>
                 <li>
-                    <a href="#">MAN</a>
+                    <a [routerLink]="['/shop']" >MAN</a>
                 </li>
                 <li>
-                    <a href="#">WOMAN</a>
+                    <a [routerLink]="['/shop']" >WOMAN</a>
                 </li>
                 <li>
-                    <a href="#">KIDS</a>
+                    <a [routerLink]="['/shop']" >KIDS</a>
                 </li>
                 <li>
-                    <a href="#">SALES</a>
+                    <a [routerLink]="['/shop']" >SALES</a>
                 </li>
                 <li>
-                    <a href="#">SEARCH</a>
+                    <a [routerLink]="['/shop']" >SEARCH</a>
                 </li>
                 <li>
-                    <a href="#">SHOPPING CART</a>
+                    <a [routerLink]="['/shop']" >SHOPPING CART</a>
                 </li>
                 <li>
-                    <a href="#">USER PROFILE</a>
+                    <a [routerLink]="['/shop']" >USER PROFILE</a>
                 </li>
                 <li>
-                    <a (click)="isOpen()" href="#">CLOSE</a>
+                    <a (click)="isOpen()">CLOSE</a>
                 </li>
             </ul>
         </div>
         <div class="nav-container">
             <div *ngIf="!isOpened" class="row">
                 <div class="col-1">
-                    <a href="#" class="toggle-button hamburger" (click)="isOpen()">
+                    <a class="toggle-button hamburger" (click)="isOpen()">
                         <span>
                             <fa-icon [icon]="faBars"></fa-icon>
                         </span>
@@ -61,22 +61,22 @@
                 <div class="col-1.5">
                     <div class="d-inline-flex">
                         <div>
-                            <a class="navbar-brand nav-dark logo" href="#">Krooter <img class="logo-wrapper"
+                            <a class="navbar-brand nav-dark logo" [routerLink]="['/']">Krooter <img class="logo-wrapper"
                                     src="../../assets/image/logo.png"></a>
                         </div>
                     </div>
                 </div>
                 <div class="col-1 navbar-links navbar" style="padding-top: 0.3%; padding-right: 9%;">
-                    <a class="navbar-brand nav-dark" style="font-weight: bold;" href="#">WOMAN</a>
-                </div>
-                <div class="col-1 navbar-links navbar navbar-brand nav-dark" style="padding-top: 0.3%;">
-                    <a class="navbar-brand nav-dark" style="font-weight: bold;" href="#">MAN</a>
+                    <a class="navbar-brand nav-dark" style="font-weight: bold;" [routerLink]="['/shop']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">WOMAN</a>
                 </div>
                 <div class="col-1 navbar-links navbar" style="padding-top: 0.3%;">
-                    <a class="navbar-brand nav-dark" style="font-weight: bold;" href="#">KIDS</a>
+                    <a class="navbar-brand nav-dark" style="font-weight: bold;" [routerLink]="['/shop']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">MAN</a>
                 </div>
                 <div class="col-1 navbar-links navbar" style="padding-top: 0.3%;">
-                    <a class="navbar-brand nav-dark" href="#">SALES</a>
+                    <a class="navbar-brand nav-dark" style="font-weight: bold;" [routerLink]="['/shop']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">KIDS</a>
+                </div>
+                <div class="col-1 navbar-links navbar" style="padding-top: 0.3%;">
+                    <a class="navbar-brand nav-dark" [routerLink]="['/shop']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">SALES</a>
                 </div>
                 <div class="col position-relative responsive" style="justify-content: flex-end;">
                     <div class="navbar-brand nav-dark d-inline-flex position-relative">

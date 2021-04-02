@@ -7,6 +7,14 @@
     text-align: center;
     color: #fff;
 }
+
+a {
+    text-decoration: none;
+    &.active {
+        text-decoration: none;
+    }
+}
+
 .btn {
     background-color: transparent;
     border-radius: 50%;
