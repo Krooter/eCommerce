@@ -9,19 +9,13 @@
             <div class="container-fliud">
                 <div class="wrapper row">
                     <div class="preview col-md-6 col-lg-4"> 
-                        <div class="tab-content">
-                          <div class="tab-pane active" id="pic-1"><img src="{{product.pictureUrl}}" /></div>
-                          <div class="tab-pane" id="pic-2"><img src="{{product.pictureUrl}}" /></div>
-                          <div class="tab-pane" id="pic-3"><img src="{{product.pictureUrl}}" /></div>
-                          <div class="tab-pane" id="pic-4"><img src="{{product.pictureUrl}}" /></div>
-                          <div class="tab-pane" id="pic-5"><img src="{{product.pictureUrl}}" /></div>
+                        <div class="tab-content" *ngFor="let item of image">
+                          <div class="tab-pane active" *ngIf="image[item.id].isMain" id="pic-1"><img src="{{image[item.id].imageUrl}}" /></div>
                         </div>
                         <ul class="preview-thumbnail nav nav-tabs">
-                          <li class="active"><a data-target="#pic-1" data-toggle="tab"><img src="{{product.pictureUrl}}" /></a></li>
-                          <li><a data-target="#pic-2" data-toggle="tab"><img src="{{product.pictureUrl}}" /></a></li>
-                          <li><a data-target="#pic-3" data-toggle="tab"><img src="{{product.pictureUrl}}" /></a></li>
-                          <li><a data-target="#pic-4" data-toggle="tab"><img src="{{product.pictureUrl}}" /></a></li>
-                          <li><a data-target="#pic-5" data-toggle="tab"><img src="{{product.pictureUrl}}" /></a></li>
+                          <li *ngFor="let item of image">
+                            <a data-target="#pic-1" (click)="setMain(item.id)" data-toggle="tab"><img src="{{image[item.id].imageUrl}}" /></a>
+                          </li>
                         </ul>
                     </div>
                     <div class="details col-md-6 col-lg-8">
