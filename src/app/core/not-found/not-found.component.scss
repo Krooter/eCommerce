@@ -1,0 +1,24 @@
+.center {
+    text-align: center;
+}
+
+.img {
+    padding: 100px;
+    max-width: 100%;
+    height: auto;
+}
+
+.btn-go-home {
+    background-color: transparent;
+    color: white;
+    outline: white;
+    border: 1px solid white;
+    padding: 15px 90px;
+    cursor: pointer;
+    &:focus{
+        background-color: rgba(128, 128, 128, 0.205);
+    }
+    &:hover{
+        background-color: rgba(128, 128, 128, 0.205);
+    }
+}

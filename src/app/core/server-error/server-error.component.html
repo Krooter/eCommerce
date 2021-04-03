@@ -1,0 +1,13 @@
+<body style="background-color: black;">
+    <div style="background-color: black; color: white;">
+        <div class="container mt-5" style="text-align: center; background-color: black;">
+            <img src="../../../assets/image/500.png"/>
+            <ng-container *ngIf="error" style="background-color: black;">
+                <h1 class="text-danger"><strong>Error: {{error.message}}</strong></h1>
+                <p class="font-weight-bold">Note: if you are seeing this then Angular is probably not responsible!</p>
+                <p class="mt-5" style="background-color: whitesmoke; color: black;">{{error.details}}</p>
+            </ng-container>
+        </div>
+    </div>
+</body>
+

@@ -1,10 +1,9 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+
 </head>
 <body>
-    <div class="container-detail" *ngIf="product" style="margin-top: 100px;">
+    <div class="container-detail" *ngIf="product" style="margin-top: 90px;">
         <div class="card">
             <div class="container-fliud">
                 <div class="wrapper row">
@@ -14,7 +13,7 @@
                         </div>
                         <ul class="preview-thumbnail nav nav-tabs">
                           <li *ngFor="let item of image">
-                            <a data-target="#pic-1" (click)="setMain(item.id)" data-toggle="tab"><img src="{{image[item.id].imageUrl}}" /></a>
+                            <a class="zoom" data-target="#pic-1" (click)="setMain(item.id)" data-toggle="tab"><img src="{{image[item.id].imageUrl}}" /></a>
                           </li>
                         </ul>
                     </div>
@@ -30,7 +29,7 @@
                             </div>
                             <span class="">41 reviews</span>
                         </div>
-                        <p class="product-description">Suspendisse quos? Tempus cras iure temporibus? Eu laudantium cubilia sem sem! Repudiandae et! Massa senectus enim minim sociosqu delectus posuere.</p>
+                        <p class="product-description">{{product.description}}</p>
                         <h4 class="price">price: <strong>{{product.price | currency}}</strong></h4>
                         <h5 class="sizes">sizes:
                             <span class="size" data-toggle="tooltip" title="small">s</span>
@@ -39,7 +38,7 @@
                             <span class="size" data-toggle="tooltip" title="xtra large">xl</span>
                         </h5>
                         <h5 class="colors">colors:
-                            <span class="color orange not-available" data-toggle="tooltip" title="Not In store"></span>
+                            <span class="color orange not-available fa fa-times" data-toggle="tooltip" title="Not In store"></span>
                             <span class="color green"></span>
                             <span class="color blue"></span>
                         </h5>
@@ -62,11 +61,9 @@
         <mdb-card [cascade]="true" style="height: 80%;">
           <mdb-badge class="new" [pill]="true" [danger]=true>NEW</mdb-badge>
           <mdb-badge class="announce" [pill]="true" [danger]=true>SALE</mdb-badge>
-          <div class="view overlay waves-light" mdbWavesEffect>
-            <a href="/shop/{{item.id}}">
-              <mdb-card-img src="{{item.pictureUrl}}" style="outline: none;"></mdb-card-img>
-            </a> 
-          </div>
+          <a href="/shop/{{item.id}}">
+            <mdb-card-img class="zoom fix" src="{{item.pictureUrl}}"></mdb-card-img>
+          </a>
           <mdb-card-body class="text-center align-items-center">
             <mdb-card-title>
               <a class="mask rgba-white-slight item-title" href="/shop/{{item.id}}"><p>{{item.name}}</p></a>

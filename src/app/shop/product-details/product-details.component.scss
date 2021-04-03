@@ -3,10 +3,6 @@ body {
     overflow-x: hidden; 
   }
   
-  img {
-    max-width: 100%; 
-  }
-  
   .container-detail {
     margin-left: 15%;
     margin-right: 15%;
@@ -26,12 +22,18 @@ body {
 
   .fa.fa-shopping-cart{
     font-size: 2em;
+    &:hover{
+      color: gray;
+    }
   }
 
   .fa.fa-heart{
     font-size: 2em;
     color: #ff3547;
     &:hover{
+      color: #ff354656;
+    }
+    &:focus{
       color: #ff354656;
     }
   }
@@ -58,6 +60,13 @@ body {
     font-weight: bold;
     :hover {
       color: #f79548;
+    }
+  }
+
+  .fix {
+    &:focus{
+      cursor: pointer;
+      transform: scale(1.5);
     }
   }
 
@@ -103,7 +112,11 @@ body {
       .preview-thumbnail.nav-tabs li img {
         max-width: 100%;
         display: block; }
-      .preview-thumbnail.nav-tabs li a {
+      .preview-thumbnail.nav-tabs li a.zoom {
+        &:hover{
+          cursor: pointer;
+          transform: scale(1.5);
+        }
         padding: 0;
         margin: 0; }
       .preview-thumbnail.nav-tabs li:last-of-type {
@@ -179,10 +192,6 @@ body {
   .not-available {
     text-align: center;
     line-height: 2em; }
-    .not-available:before {
-      font-family: fontawesome;
-      content: "\f00d";
-      color: #fff; }
   
   .orange {
     background: #ff9f1a; }

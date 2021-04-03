@@ -3,6 +3,7 @@
 /* Importing Bootstrap SCSS file. */
 @import '~bootstrap/scss/bootstrap';
 @import "../node_modules/bootswatch/dist/cosmo/bootstrap.min.css";
+@import "../node_modules/@fortawesome/fontawesome-free/css/fontawesome.min.css";
 
 @font-face {
     font-family: mottek;
@@ -11,3 +12,7 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.toast-top-center {
+    margin-top: 90px !important;
+}
