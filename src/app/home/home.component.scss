@@ -23,10 +23,12 @@
     width: 100% !important;
     height: auto !important;
   }
-  
+
   .video-view .video-content {
     position: absolute;
-    top: 50%;
+    width: auto;
+    height: auto;
+    top: 34%;
     left: 10%;
     color: white;
 }
@@ -38,9 +40,18 @@
 .primary-font {
     font-weight: bold;
     font-size: 3rem;
+    position: absolute;
+}
+
+.primary-font2 {
+    font-weight: bold;
+    font-size: 3rem;
+    margin-top: 50px;
+    position: absolute;
 }
 
 .secondary-font {
+    margin-top: 130px;
     font-size: 1rem;
 }
 
@@ -71,9 +82,15 @@
     .video-view .video {
         margin-top: 101px;
     }
+    .btn-default {
+        margin-top: 50px;
+    }
 }
 @media (max-width: 768px){
     .primary-font {
+        display: none;
+    }
+    .primary-font2 {
         display: none;
     }
     .secondary-font {

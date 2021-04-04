@@ -21,3 +21,17 @@
     left: 10px;
     top: 30px;
     background-color: #f79548 !important;}
+
+.card:hover{
+    transform: scale(1.05);
+    transition: opacity .9s,transform .25s .03s;
+    opacity: 1;
+}
+
+img:hover{
+    cursor: pointer;
+}
+
+img:focus{
+    outline: none;
+}

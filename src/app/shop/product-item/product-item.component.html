@@ -1,12 +1,12 @@
 <div class="card h-100 box-shadow">
     <mdb-badge class="new" [pill]="true" [danger]=true>NEW</mdb-badge>
     <mdb-badge class="announce" [pill]="true" [danger]=true>SALE</mdb-badge>
-    <img src="{{ product.pictureUrl }}" alt="{{ product.name }}" class="img-fluid bg-light"/>
+    <img routerLink="/shop/{{product.id}}" src="{{ product.pictureUrl }}" alt="{{ product.name }}" class="img-fluid"/>
     <div class="card-body d-flex flex-column">
         <a class="item-title" routerLink="/shop/{{product.id}}">
             <h3 class="text-uppercase">{{ product.name }}</h3>
         </a>
-        <span class="mb-2"><strong>{{ product.price | currency }}</strong></span>
+        <span class="mb-2"><strong>{{product.price | currency}}</strong></span>
 
         <div class="btn-group mt-auto">
             <button type="button" class="btn btn-sm btn-outline-secondary mr-2">
