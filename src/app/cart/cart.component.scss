@@ -1,0 +1,80 @@
+@font-face {
+    font-family: roboto;
+    src: url(../../assets/font/Roboto.ttf);
+}
+
+.container-new{
+    margin-top: 120px;
+    margin-left: 11%;
+    margin-right: 11%;
+}
+
+.text-title{
+    font-family: 'roboto', sans-serif;
+    font-weight: 500;
+    font-size: 2.3rem;
+}
+
+.text-description{
+    font-family: 'roboto', sans-serif;
+    font-weight: 300;
+    display: flex; 
+    justify-content: space-between;
+}
+
+.img-thumbnail{
+    width: 100%;
+    height: auto;
+    outline: 0;
+    border: none;
+    background-color: #f5f5f5;
+}
+
+.shopping-cart-card{
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+hr.line{
+    border-top: 3px solid black;
+}
+
+.promo {
+    border: 1px solid gray;
+    padding: 4px 20px;
+    cursor: pointer;
+}
+
+.button-default{
+    background-color: white;
+    width: 150px;
+    font-weight: bold;
+    &:hover{
+        background-color: tra;
+    }
+}
+
+.button-order{
+    background-color: black;
+    color: white;
+    outline: 0;
+    border: none;
+    padding: 3px 10px;
+    width: 100%;
+    height: auto;
+    font-weight: bold;
+}
+
+@media(max-width: 769){
+    .col-md-5.ml-5{
+        display: none;
+        margin-left: 0;
+    }
+}
+
+@media(max-width: 426px){
+    .container-new{
+        margin-left: 2%;
+        margin-right: 2%;
+    }
+}

@@ -92,9 +92,9 @@
                             <fa-icon href="#" class="user-link" [icon]="faUser"></fa-icon>
                         </button>
                         <button class='btn'>
-                            <fa-icon class="cart-link" [icon]="faShoppingCart" style="padding-right: 15%;"></fa-icon>
+                            <fa-icon class="cart-link" routerLink="/cart" [icon]="faShoppingCart" style="padding-right: 15%;"></fa-icon>
                         </button>
-                        <div class="cart-no" *ngIf="cartItems != 0">{{cartItems}}</div>
+                        <div *ngIf="(cart$ | async) as cart" class="cart-no">{{cart.items.length}}</div>
                     </div>
                 </div>
             </div>
