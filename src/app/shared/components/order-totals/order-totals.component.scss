@@ -1,0 +1,32 @@
+@font-face {
+    font-family: roboto;
+    src: url(../../../../assets/font/Roboto.ttf);
+}
+
+hr.line{
+    border-top: 3px solid black;
+}
+
+.promo {
+    border: 1px solid gray;
+    padding: 4px 20px;
+    cursor: pointer;
+}
+
+.button-order{
+    background-color: black;
+    color: white;
+    outline: 0;
+    border: none;
+    padding: 3px 10px;
+    width: 100%;
+    height: auto;
+    font-weight: bold;
+}
+
+.text-description{
+    font-family: 'roboto', sans-serif;
+    font-weight: 300;
+    display: flex; 
+    justify-content: space-between;
+}

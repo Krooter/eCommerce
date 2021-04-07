@@ -12,6 +12,7 @@ const routes: Routes = [
     {path: 'not-found', component: NotFoundComponent},
     {path: 'shop', loadChildren: () => import('./shop/shop.module').then(mod => mod.ShopModule)},
     {path: 'cart', loadChildren: () => import('./cart/cart.module').then(mod => mod.CartModule)},
+    {path: 'checkout', loadChildren: () => import('./checkout/checkout.module').then(mod => mod.CheckoutModule)},
     {path: '**', redirectTo: '', pathMatch: 'full'}
 ];
 

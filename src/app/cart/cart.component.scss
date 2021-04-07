@@ -22,6 +22,15 @@
     justify-content: space-between;
 }
 
+.btn-incr-decr{
+    cursor: pointer;
+    font-size: 1.1em;
+    color: black;
+    outline: none;
+    border: none;
+    background-color: transparent; 
+  }
+
 .img-thumbnail{
     width: 100%;
     height: auto;

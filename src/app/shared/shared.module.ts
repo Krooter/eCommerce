@@ -7,9 +7,10 @@ import { PagerComponent } from './components/pager/pager.component';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { NgxGalleryModule } from '@kolkov/ngx-gallery';
+import { OrderTotalsComponent } from './components/order-totals/order-totals.component';
 
 @NgModule({
-  declarations: [PagingHeaderComponent, PagerComponent],
+  declarations: [PagingHeaderComponent, PagerComponent, OrderTotalsComponent],
   imports: [
     CommonModule,
     PaginationModule.forRoot(),
@@ -25,7 +26,8 @@ import { NgxGalleryModule } from '@kolkov/ngx-gallery';
     PagerComponent,
     CarouselModule,
     MDBBootstrapModule,
-    NgxGalleryModule
+    NgxGalleryModule,
+    OrderTotalsComponent
   ]
 })
 export class SharedModule { }

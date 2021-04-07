@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { CartService } from 'src/app/cart/cart.service';
 import { IImage } from 'src/app/shared/_models/image';
 import { IProduct } from 'src/app/shared/_models/product';
 import { ShopParams } from 'src/app/shared/_models/shopParams';
@@ -21,10 +22,14 @@ export class ProductDetailsComponent implements OnInit {
   amount: number = 1;
   image: IImage[];
 
-  constructor(private shopService: ShopService, private activatedRoute: ActivatedRoute, private http: HttpClient) { }
+  constructor(private shopService: ShopService, private activatedRoute: ActivatedRoute, private cartService: CartService) { }
 
   ngOnInit(): void {
     this.loadProduct();
+  }
+
+  addItemToCart(){
+    this.cartService.addItemToCart(this.product, this.amount);
   }
 
   loadProduct(){

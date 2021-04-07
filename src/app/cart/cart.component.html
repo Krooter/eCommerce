@@ -1,18 +1,10 @@
 <div class="container-new">
-    <!-- <div *ngIf="(cart$ | async) === null">
-        <p>Are no item in your cart!</p>
-    </div>
-    
-    <div *ngIf="(cart$ | async)">
-        <ul>
-            <li *ngFor="let item of (cart$ | async).items">
-                {{item.productName}} - {{item.quantity}}
-            </li>
-        </ul>
-    </div> -->
     <h1 class="text-title">SHOPPING CART</h1>
     <div class="row">
-        <div class="col-md-7">
+        <div class="col-md-7" *ngIf="(cart$ | async) === null">
+            <p class="text-description">There are no item in your cart!</p>
+        </div>
+        <div class="col-md-7" *ngIf="(cart$ | async)">
             <a class="text-description"> 
                 Have an Krooter account? Sign in and save time. <button class="button-default">SIGN IN</button>
             </a>
@@ -21,7 +13,7 @@
                 <hr class="line">
             </div>
             <div class="shopping-cart-card" *ngFor="let item of (cart$ | async).items">
-                <div class="row" >
+                <div class="row">
                     <div class="col-md-6">
                         <img class="img-thumbnail" src="{{item.pictureUrl}}">
                     </div>
@@ -31,9 +23,13 @@
                         <p style="font-weight: 300;">BRAND: {{item.brand}}</p>
                         <p style="font-weight: 300;">TYPE: {{item.type}}</p>
                         <p style="font-weight: 300;">SIZE: 43</p>
-                        <p style="font-weight: 300;">AMOUNT: {{item.quantity}}</p>
+                        <p style="font-weight: 300;">AMOUNT: 
+                            <button class="mr-1 btn-incr-decr" (click)="decrement(item)"><i class="fa fa-minus-circle"></i></button>
+                                {{item.quantity}}
+                            <button class="mr-1 btn-incr-decr" (click)="increment(item)"><i class="fa fa-plus-circle"></i></button>
+                        </p>
                         <a style="font-weight: 300;">
-                            <span style="text-decoration: underline; margin-right: 10px;">Remove</span> | 
+                            <span style="text-decoration: underline; margin-right: 10px;" (click)="removeCartItem(item)">Remove</span> | 
                             <span style="text-decoration: underline; margin-left: 10px;">Edit</span>
                         </a>
                     </div>
@@ -41,27 +37,7 @@
             </div>
         </div>
         <div class="col-md-5" style="margin-bottom: 20px;">
-            <div style="font-size: 1.3rem; font-weight: 500; font-family: 'roboto'; margin-top: 10px; line-height: 0px;">ORDER SUMMARY
-                <br />
-                <hr class="line">
-            </div>
-            <div class="promo">
-                <i class="fa fa-tag"></i>
-                <span class="ml-2" style="font-weight: 300;">HAVE A PROMO CODE?</span>
-            </div>
-            <p class="text-description" style="margin-top: 20px;">
-                PRICE: <span>NOT IMPLEMENTED</span>
-            </p>
-            <p class="text-description" style="margin-top: 40px; margin-bottom: 10px;">
-                SHIPPING: <span style="align-content: flex-end;">FREE</span>
-            </p>
-            <hr />
-            <p class="text-description" style="font-weight: bold;">
-                ORDER TOTAL: <span>NOT IMPLEMENTED</span>
-            </p>
-            <button class="button-order">
-                PROCEED TO CHECKOUT
-            </button>
+            <app-order-totals></app-order-totals>
         </div>
     </div>
     

@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
-import { Cart, ICart, ICartItem } from '../shared/_models/cart';
+import { Cart, ICart, ICartItem, ICartTotals } from '../shared/_models/cart';
 import { IProduct } from '../shared/_models/product';
 
 @Injectable({
@@ -12,6 +12,8 @@ import { IProduct } from '../shared/_models/product';
 export class CartService {
   baseUrl = environment.apiUrl;
   private cartSource = new BehaviorSubject<ICart>(null);
+  private cartTotalSource = new BehaviorSubject<ICartTotals>(null);
+  cartTotal$ = this.cartTotalSource.asObservable();
   cart$ = this.cartSource.asObservable();
 
   constructor(private http: HttpClient) { }
@@ -21,7 +23,7 @@ export class CartService {
       .pipe(
         map((cart: ICart) => {
           this.cartSource.next(cart);
-          console.log(this.getCurrentCartValue());
+          this.calculateTotals();
         })
       );
   }
@@ -29,7 +31,7 @@ export class CartService {
   setCart(cart: ICart){
     return this.http.post(this.baseUrl + 'cart', cart).subscribe((response: ICart) => {
       this.cartSource.next(response);
-      console.log(response);
+      this.calculateTotals();
     }, error => {
       console.log(error);
     });
@@ -45,6 +47,55 @@ export class CartService {
     cart.items = this.addOrUpdateItem(cart.items, itemToAdd, quantity);
 
     this.setCart(cart);
+  }
+
+  cartIncrQuantity(item: ICartItem){
+    const cart = this.getCurrentCartValue();
+    const foundItemIndex = cart.items.findIndex(x => x.id === item.id);
+    cart.items[foundItemIndex].quantity++;
+    this.setCart(cart);
+  }
+
+  cartDecrQuantity(item: ICartItem){
+    const cart = this.getCurrentCartValue();
+    const foundItemIndex = cart.items.findIndex(x => x.id === item.id);
+    if(cart.items[foundItemIndex].quantity > 1){
+      cart.items[foundItemIndex].quantity--;
+      this.setCart(cart);
+    } else {
+      this.removeItemFromCart(item);
+    }
+  }
+
+  removeItemFromCart(item: ICartItem) {
+    const cart = this.getCurrentCartValue();
+    if (cart.items.some(x => x.id === item.id)){
+      cart.items = cart.items.filter(i => i.id !== item.id);
+      if (cart.items.length > 0){
+        this.setCart(cart);
+      } else if (cart.items.length === 0){
+        this.deleteCart(cart);
+      }
+    }
+  }
+
+  deleteCart(cart: ICart) {
+    return this.http.delete(this.baseUrl + 'cart?id=' + cart.id).subscribe(() => {
+      this.cartSource.next(null);
+      this.cartTotalSource.next(null);
+      localStorage.removeItem('cart_id');
+    }, error => {
+      console.log(error);
+    })  
+  }
+
+  private calculateTotals(){
+    const cart = this.getCurrentCartValue();
+    const shipping = 0;
+    const discount = 1;
+    const subtotal = cart.items.reduce((a, b) =>(b.price * b.quantity) + a, 0);
+    const total = (shipping + subtotal) * discount;
+    this.cartTotalSource.next({shipping, total, subtotal});
   }
 
   private addOrUpdateItem(items: ICartItem[], itemToAdd: ICartItem, quantity: number): ICartItem[] {

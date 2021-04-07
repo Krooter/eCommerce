@@ -46,7 +46,7 @@
                             <button (click)="decrement()" class="mr-1 btn-incr-decr"><i class="fa fa-minus-circle"></i></button>
                             <span class="font-weight-bold" style="font-size: 1.5em;">{{amount}}</span>
                             <button (click)="increment()" class="btn-incr-decr ml-1"><i class="fa fa-plus-circle"></i></button>
-                            <button class="btn-detail ml-2" type="button"><span class="fa fa-shopping-cart"></span></button>
+                            <button class="btn-detail ml-2" type="button" (click)="addItemToCart()"><span class="fa fa-shopping-cart"></span></button>
                             <button class="btn-detail ml-2" type="button"><span class="fa fa-heart"></span></button>
                         </div>
                     </div>
