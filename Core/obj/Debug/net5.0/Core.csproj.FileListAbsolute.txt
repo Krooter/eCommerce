@@ -1,0 +1,30 @@
+D:\.NET Core\eCommerce\Core\bin\Debug\net5.0\Core.deps.json
+D:\.NET Core\eCommerce\Core\bin\Debug\net5.0\Core.runtimeconfig.json
+D:\.NET Core\eCommerce\Core\bin\Debug\net5.0\Core.runtimeconfig.dev.json
+D:\.NET Core\eCommerce\Core\bin\Debug\net5.0\Core.dll
+D:\.NET Core\eCommerce\Core\bin\Debug\net5.0\ref\Core.dll
+D:\.NET Core\eCommerce\Core\bin\Debug\net5.0\Core.pdb
+D:\.NET Core\eCommerce\Core\obj\Debug\net5.0\Core.csprojAssemblyReference.cache
+D:\.NET Core\eCommerce\Core\obj\Debug\net5.0\Core.GeneratedMSBuildEditorConfig.editorconfig
+D:\.NET Core\eCommerce\Core\obj\Debug\net5.0\Core.AssemblyInfoInputs.cache
+D:\.NET Core\eCommerce\Core\obj\Debug\net5.0\Core.AssemblyInfo.cs
+D:\.NET Core\eCommerce\Core\obj\Debug\net5.0\Core.csproj.CoreCompileInputs.cache
+D:\.NET Core\eCommerce\Core\obj\Debug\net5.0\Core.dll
+D:\.NET Core\eCommerce\Core\obj\Debug\net5.0\ref\Core.dll
+D:\.NET Core\eCommerce\Core\obj\Debug\net5.0\Core.pdb
+D:\.NET Core\eCommerce\Core\obj\Debug\net5.0\Core.genruntimeconfig.cache
+C:\Users\cpole\Desktop\eCommerce\Core\bin\Debug\net5.0\Core.deps.json
+C:\Users\cpole\Desktop\eCommerce\Core\bin\Debug\net5.0\Core.runtimeconfig.json
+C:\Users\cpole\Desktop\eCommerce\Core\bin\Debug\net5.0\Core.runtimeconfig.dev.json
+C:\Users\cpole\Desktop\eCommerce\Core\bin\Debug\net5.0\Core.dll
+C:\Users\cpole\Desktop\eCommerce\Core\bin\Debug\net5.0\ref\Core.dll
+C:\Users\cpole\Desktop\eCommerce\Core\bin\Debug\net5.0\Core.pdb
+C:\Users\cpole\Desktop\eCommerce\Core\obj\Debug\net5.0\Core.csprojAssemblyReference.cache
+C:\Users\cpole\Desktop\eCommerce\Core\obj\Debug\net5.0\Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\cpole\Desktop\eCommerce\Core\obj\Debug\net5.0\Core.AssemblyInfoInputs.cache
+C:\Users\cpole\Desktop\eCommerce\Core\obj\Debug\net5.0\Core.AssemblyInfo.cs
+C:\Users\cpole\Desktop\eCommerce\Core\obj\Debug\net5.0\Core.csproj.CoreCompileInputs.cache
+C:\Users\cpole\Desktop\eCommerce\Core\obj\Debug\net5.0\Core.dll
+C:\Users\cpole\Desktop\eCommerce\Core\obj\Debug\net5.0\ref\Core.dll
+C:\Users\cpole\Desktop\eCommerce\Core\obj\Debug\net5.0\Core.pdb
+C:\Users\cpole\Desktop\eCommerce\Core\obj\Debug\net5.0\Core.genruntimeconfig.cache
