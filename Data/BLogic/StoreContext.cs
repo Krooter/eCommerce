@@ -21,6 +21,10 @@ namespace Data.BLogic
             base.OnModelCreating(modelBuilder);
             modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
 
+            //modelBuilder.Entity<Product>()
+            //    .Property(b => b.DateAdded)
+            //    .HasDefaultValue("getdate()");
+
             if (Database.ProviderName == "Microsoft.EntityFrameworkCore.Sqlite")
             {
                 foreach (var entityType in modelBuilder.Model.GetEntityTypes())

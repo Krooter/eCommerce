@@ -18,20 +18,22 @@ namespace API.Controllers
         private readonly IGenericRepository<ProductBrand> _productBrandRepo;
         private readonly IGenericRepository<ProductCategory> _productCategoryRepo;
         private readonly IGenericRepository<ProductType> _productTypeRepo;
+        private readonly IProductRepository _productRepository;
         private readonly IMapper _mapper;
 
         public ProductsController(IGenericRepository<Product> productRepo, IGenericRepository<ProductBrand> productBrandRepo, 
-            IGenericRepository<ProductCategory> productCategoryRepo, IGenericRepository<ProductType> productTypeRepo, IMapper mapper)
+            IGenericRepository<ProductCategory> productCategoryRepo, IGenericRepository<ProductType> productTypeRepo, IProductRepository productRepository, IMapper mapper)
         {
             _productRepo = productRepo;
             _productBrandRepo = productBrandRepo;
             _productCategoryRepo = productCategoryRepo;
             _productTypeRepo = productTypeRepo;
+            _productRepository = productRepository;
             _mapper = mapper;
         }
 
         [HttpGet]
-        public async Task<ActionResult<Pagination<ProductDTO>>> GetProducts([FromQuery]ProductSpecParams productParams)
+        public async Task<ActionResult<Pagination<ProductDTO>>> GetProducts([FromQuery] ProductSpecParams productParams)
         {
             var spec = new ProductsBrandTypeCategorySpecification(productParams);
 

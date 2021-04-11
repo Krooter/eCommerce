@@ -1,7 +1,6 @@
-﻿using System;
+﻿using Core.Entities;
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace API.DTOs
 {
@@ -11,12 +10,13 @@ namespace API.DTOs
         public string Name { get; set; }
         public string Description { get; set; }
         public decimal Price { get; set; }
-        public string PictureUrl { get; set; }
         public int ProductTypeId { get; set; }
         public string ProductType { get; set; }
         public int ProductBrandId { get; set; }
         public string ProductBrand { get; set; }
         public int ProductCategoryId { get; set; }
         public string ProductCategory { get; set; }
+        public DateTime DateAdded { get; set; }
+        public ICollection<PhotoDTO> Photo { get; set; }
     }
 }
