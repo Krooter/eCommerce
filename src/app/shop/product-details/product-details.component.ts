@@ -38,27 +38,27 @@ export class ProductDetailsComponent implements OnInit {
       this.productType = result.productTypeId;
       this.image = [
         {
-          imageUrl: result.pictureUrl,
+          imageUrl: result.photo[0].photoUrl1,
           isMain: true,
           id: 0
         },
         {
-          imageUrl: result.pictureUrl,
+          imageUrl: result.photo[0].photoUrl2,
           isMain: false,
           id: 1
         },
         {
-          imageUrl: result.pictureUrl,
+          imageUrl: result.photo[0].photoUrl3,
           isMain: false,
           id: 2
         },
         {
-          imageUrl: result.pictureUrl,
+          imageUrl: result.photo[0].photoUrl4,
           isMain: false,
           id: 3
         },
         {
-          imageUrl: result.pictureUrl,
+          imageUrl: result.photo[0].photoUrl5,
           isMain: false,
           id: 4
         }
@@ -69,7 +69,7 @@ export class ProductDetailsComponent implements OnInit {
     })
   }
   getSimilarProducts() {
-    this.shopService.getSimilarProducts(this.productType, this.productSize).subscribe(result => {
+    this.shopService.getSimilarProducts(this.product.productBrandId, this.productSize).subscribe(result => {
       this.products = result.data;
     }, error => {
       console.log(error);

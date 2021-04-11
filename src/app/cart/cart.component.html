@@ -6,9 +6,9 @@
         </div>
         <div class="col-md-7" *ngIf="(cart$ | async)">
             <a class="text-description"> 
-                Have an Krooter account? Sign in and save time. <button class="button-default">SIGN IN</button>
+                Have an Krooter account? Sign in and save time. <button class="button-default" routerLink="/">SIGN IN</button>
             </a>
-            <div style="font-size: 1.3rem; font-weight: 500; font-family: 'roboto'; margin-top: 40px; line-height: 0px;">{{(cart$ | async).items.length}} ITEMS
+            <div style="font-size: 1.3rem; font-weight: 500; margin-top: 40px; line-height: 0px;">{{(cart$ | async).items.length}} ITEMS
                 <br />
                 <hr class="line">
             </div>

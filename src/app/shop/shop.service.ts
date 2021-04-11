@@ -33,7 +33,7 @@ export class ShopService {
 
     params = params.append('sort', shopParams.sort);
     params = params.append('pageIndex', shopParams.pageNumber.toString());
-    params = params.append('pageIndex', shopParams.pageSize.toString());
+    params = params.append('pageSize', shopParams.pageSize.toString());
 
 
     return this.http.get<IPagination>(this.baseUrl + 'products', {observe: 'response', params})
@@ -44,11 +44,11 @@ export class ShopService {
     );
   }
 
-  getSimilarProducts(typeId: number, size: string){
+  getSimilarProducts(brandId: number, size: string){
     let params = new HttpParams();
 
-    if(typeId){
-      params = params.append('typeId', typeId.toString());
+    if(brandId){
+      params = params.append('brandId', brandId.toString());
     }
 
     if(size){

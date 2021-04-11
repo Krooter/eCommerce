@@ -1,4 +1,5 @@
 import { v4 as uuidv4 } from 'uuid'
+import { IPhoto } from './photo';
 
 export interface ICart {
     id: string;

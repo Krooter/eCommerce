@@ -122,7 +122,7 @@ export class CartService {
       id: item.id,
       productName: item.name,
       price: item.price,
-      pictureUrl: item.pictureUrl,
+      pictureUrl: item.photo[0].photoUrl1,
       quantity,
       brand: item.productBrand,
       type: item.productType

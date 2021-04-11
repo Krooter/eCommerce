@@ -1,7 +1,7 @@
 <div class="card h-100 box-shadow">
-    <mdb-badge class="new" [pill]="true" [danger]=true>NEW</mdb-badge>
+    <mdb-badge class="new" [pill]="true" [danger]=true *ngIf="calculateDate() > 20">NEW</mdb-badge>
     <mdb-badge class="announce" [pill]="true" [danger]=true>SALE</mdb-badge>
-    <img routerLink="/shop/{{product.id}}" src="{{ product.pictureUrl }}" alt="{{ product.name }}" class="img-fluid"/>
+    <img routerLink="/shop/{{product.id}}" src="{{product.photo[0].photoUrl1}}" alt="{{ product.name }}" class="img-container"/>
     <div class="card-body d-flex flex-column">
         <a class="item-title" routerLink="/shop/{{product.id}}">
             <h3 class="text-uppercase">{{ product.name }}</h3>
@@ -9,8 +9,8 @@
         <span class="mb-2"><strong>{{product.price | currency}}</strong></span>
 
         <div class="btn-group mt-auto">
-            <button type="button" class="btn btn-sm btn-outline-secondary mr-2">
-                <fa-icon (click)="addItemToCart()" [icon]="faShopingCart"></fa-icon>
+            <button (click)="addItemToCart()" type="button" class="btn btn-sm btn-outline-secondary mr-2">
+                <fa-icon [icon]="faShopingCart"></fa-icon>
             </button>
             <button type="button" routerLink="/shop/{{product.id}}" class="btn btn-sm btn-outline-secondary">
                 View

@@ -1,3 +1,5 @@
+import { IPhoto } from "./photo";
+
 export interface IProduct {
     id: number;
     name: string;
@@ -10,4 +12,6 @@ export interface IProduct {
     productBrandId: number;
     productCategory: string;
     productCategoryId: number;
+    photo: IPhoto[];
+    dateAdded: Date;
   }

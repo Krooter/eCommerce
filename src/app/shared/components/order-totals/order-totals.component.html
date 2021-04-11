@@ -1,21 +1,24 @@
-<div style="font-size: 1.3rem; font-weight: 500; font-family: 'roboto'; margin-top: 10px; line-height: 0px;">ORDER SUMMARY
-    <br />
-    <hr class="line">
+
+<div *ngIf="(cartTotals$ | async)?.total !== null">
+    <div style="font-size: 1.3rem; font-weight: 500; font-family: 'roboto'; margin-top: 10px; line-height: 0px;">ORDER SUMMARY
+        <br />
+        <hr class="line">
+    </div>
+    <div class="promo">
+        <i class="fa fa-tag"></i>
+        <span class="ml-2" style="font-weight: 300;">HAVE A PROMO CODE?</span>
+    </div>
+    <p class="text-description" style="margin-top: 20px;">
+        PRICE: <span>{{(cartTotals$ | async)?.subtotal | currency}}</span>
+    </p>
+    <p class="text-description" style="margin-top: 40px; margin-bottom: 10px;">
+        SHIPPING: <span style="align-content: flex-end;">{{(cartTotals$ | async)?.shipping | currency}}</span>
+    </p>
+    <hr />
+    <p class="text-description" style="font-weight: bold;">
+        ORDER TOTAL: <span>{{(cartTotals$ | async)?.total | currency}}</span>
+    </p>
+    <button class="button-order" (click)="check()" routerLink="/checkout">
+        PROCEED TO CHECKOUT
+    </button>
 </div>
-<div class="promo">
-    <i class="fa fa-tag"></i>
-    <span class="ml-2" style="font-weight: 300;">HAVE A PROMO CODE?</span>
-</div>
-<p class="text-description" style="margin-top: 20px;">
-    PRICE: <span>{{(cartTotals$ | async).subtotal | currency}}</span>
-</p>
-<p class="text-description" style="margin-top: 40px; margin-bottom: 10px;">
-    SHIPPING: <span style="align-content: flex-end;">{{(cartTotals$ | async).shipping | currency}}</span>
-</p>
-<hr />
-<p class="text-description" style="font-weight: bold;">
-    ORDER TOTAL: <span>{{(cartTotals$ | async).total | currency}}</span>
-</p>
-<button routerLink="/checkout" class="button-order">
-    PROCEED TO CHECKOUT
-</button>

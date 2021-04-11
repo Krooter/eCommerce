@@ -1,75 +1,81 @@
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
 </head>
+
 <body>
-    <div class="container-detail" *ngIf="product" style="margin-top: 90px;">
-        <div class="card">
-            <div class="container-fliud">
-                <div class="wrapper row">
-                    <div class="preview col-md-6 col-lg-4"> 
-                        <div class="tab-content" *ngFor="let item of image">
-                          <div class="tab-pane active" *ngIf="image[item.id].isMain" id="pic-1"><img src="{{image[item.id].imageUrl}}" /></div>
-                        </div>
-                        <ul class="preview-thumbnail nav nav-tabs">
-                          <li *ngFor="let item of image">
-                            <a class="zoom" data-target="#pic-1" (click)="setMain(item.id)" data-toggle="tab"><img src="{{image[item.id].imageUrl}}" /></a>
-                          </li>
-                        </ul>
-                    </div>
-                    <div class="details col-md-6 col-lg-8">
-                        <h3 class="product-title">{{product.name}}</h3>
-                        <div class="rating">
-                            <div class="">
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star"></span>
-                                <span class="fa fa-star"></span>
-                            </div>
-                            <span class="">41 reviews</span>
-                        </div>
-                        <p class="product-description">{{product.description}}</p>
-                        <h4 class="price">price: <strong>{{product.price | currency}}</strong></h4>
-                        <h5 class="sizes">sizes:
-                            <span class="size" data-toggle="tooltip" title="small">s</span>
-                            <span class="size" data-toggle="tooltip" title="medium">m</span>
-                            <span class="size" data-toggle="tooltip" title="large">l</span>
-                            <span class="size" data-toggle="tooltip" title="xtra large">xl</span>
-                        </h5>
-                        <h5 class="colors">colors:
-                            <span class="color orange not-available fa fa-times" data-toggle="tooltip" title="Not In store"></span>
-                            <span class="color green"></span>
-                            <span class="color blue"></span>
-                        </h5>
-                        <div class="action d-flex justify-content-start align-items-center align-items-end">
-                            <button (click)="decrement()" class="mr-1 btn-incr-decr"><i class="fa fa-minus-circle"></i></button>
-                            <span class="font-weight-bold" style="font-size: 1.5em;">{{amount}}</span>
-                            <button (click)="increment()" class="btn-incr-decr ml-1"><i class="fa fa-plus-circle"></i></button>
-                            <button class="btn-detail ml-2" type="button" (click)="addItemToCart()"><span class="fa fa-shopping-cart"></span></button>
-                            <button class="btn-detail ml-2" type="button"><span class="fa fa-heart"></span></button>
-                        </div>
-                    </div>
-                </div>
+  <div class="container-detail" *ngIf="product" style="margin-top: 90px;">
+    <div class="card" style="padding-bottom: 5px;">
+      <div class="container-fliud">
+        <div class="wrapper row">
+          <div class="preview col-md-6 col-lg-4">
+            <div class="tab-content" *ngFor="let item of image">
+              <div class="tab-pane active" *ngIf="image[item.id].isMain" id="pic-1"><img class="img-container"
+                  src="{{image[item.id].imageUrl}}" /></div>
             </div>
+            <ul class="preview-thumbnail nav nav-tabs">
+              <li *ngFor="let item of image">
+                <a class="zoom" data-target="#pic-1" (click)="setMain(item.id)" data-toggle="tab"><img
+                    src="{{image[item.id].imageUrl}}" /></a>
+              </li>
+            </ul>
+          </div>
+          <div class="details col-md-6 col-lg-8">
+            <h3 class="product-title">{{product.name}}</h3>
+            <div class="rating">
+              <div class="">
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+              </div>
+              <span class="">41 reviews</span>
+            </div>
+            <p class="product-description">{{product.description}}</p>
+            <h4 class="price">price: <strong>{{product.price | currency}}</strong></h4>
+            <h5 class="sizes">sizes:
+              <span class="size" data-toggle="tooltip" title="small">40</span>
+              <span class="size" data-toggle="tooltip" title="medium">41</span>
+              <span class="size" data-toggle="tooltip" title="large">42</span>
+              <span class="size" data-toggle="tooltip" title="xtra large">43</span>
+            </h5>
+            <h5 class="colors">colors:
+              <span class="color orange not-available fa fa-times" data-toggle="tooltip" title="Not In store"></span>
+              <span class="color green"></span>
+              <span class="color blue"></span>
+            </h5>
+            <div class="action d-flex justify-content-start align-items-center align-items-end">
+              <button (click)="decrement()" class="mr-1 btn-incr-decr"><i class="fa fa-minus-circle"></i></button>
+              <span class="font-weight-bold" style="font-size: 1.5em;">{{amount}}</span>
+              <button (click)="increment()" class="btn-incr-decr ml-1"><i class="fa fa-plus-circle"></i></button>
+              <button class="btn-detail ml-2" type="button" (click)="addItemToCart()"><span
+                  class="fa fa-shopping-cart"></span></button>
+              <button class="btn-detail ml-2" type="button"><span class="fa fa-heart"></span></button>
+            </div>
+          </div>
         </div>
+      </div>
     </div>
-    
-<section class="container-detail">
+  </div>
+
+  <section class="container-detail">
     <div class="row">
       <div class="col-md-3 col-xl-3 col-md-6" *ngFor="let item of products">
-        <mdb-card [cascade]="true" style="height: 80%;">
+        <mdb-card [cascade]="true">
           <mdb-badge class="new" [pill]="true" [danger]=true>NEW</mdb-badge>
           <mdb-badge class="announce" [pill]="true" [danger]=true>SALE</mdb-badge>
           <a href="/shop/{{item.id}}">
-            <mdb-card-img class="zoom fix" src="{{item.pictureUrl}}"></mdb-card-img>
+            <img class="img-fluid" src="{{item.photo[0].photoUrl1}}">
           </a>
           <mdb-card-body class="text-center align-items-center">
             <mdb-card-title>
-              <a class="mask rgba-white-slight item-title" href="/shop/{{item.id}}"><p>{{item.name}}</p></a>
+              <a class="mask rgba-white-slight item-title" href="/shop/{{item.id}}">
+                <p>{{item.name}}</p>
+              </a>
             </mdb-card-title>
             <p>
-                <strong style="color: #33a544;">{{item.price | currency}}</strong>
+              <strong style="color: #33a544;">{{item.price | currency}}</strong>
             </p>
           </mdb-card-body>
         </mdb-card>

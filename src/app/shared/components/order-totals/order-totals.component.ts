@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { CartService } from 'src/app/cart/cart.service';
 import { ICartTotals } from '../../_models/cart';
@@ -11,10 +12,14 @@ import { ICartTotals } from '../../_models/cart';
 export class OrderTotalsComponent implements OnInit {
   cartTotals$: Observable<ICartTotals>;
 
-  constructor(private cartService: CartService) { }
+  constructor(private cartService: CartService, private router: Router) { }
 
   ngOnInit(): void {
     this.cartTotals$ = this.cartService.cartTotal$;
+  }
+
+  check(){
+    this.router.navigate(['checkout']);
   }
 
 }
