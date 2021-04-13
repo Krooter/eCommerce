@@ -1,0 +1,63 @@
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid black;
+    box-sizing: border-box;
+}
+
+.btn-login {
+    background-color: black;
+    color: white;
+    outline: 0;
+    border: none;
+    padding: 3px 10px;
+    width: 50%;
+    height: 50px;
+    font-weight: bold;
+}
+
+.box form div {
+    position: relative;
+}
+
+.box div input:focus{
+    outline: none;
+}
+
+p.terms {
+    text-decoration: underline;
+    width: fit-content;
+    &:hover{
+        color: white;
+        background-color: black;
+    }
+}
+
+p a.terms {
+    text-decoration: underline;
+    &:hover{
+        color: white;
+        background-color: black;
+    }
+}
+
+.box form div label {
+    position: absolute;
+    top: 18px;
+    pointer-events: none;
+    left: 20px;
+    transition: .5s;
+    color: #999;
+    background-color: white;
+    padding: 0px 5px;
+}
+
+.box div input:focus ~ label,
+.box div input:valid ~ label{
+    outline: 0;
+    top: -6px;
+    left: 20px;
+    font-size: 14px;
+}
