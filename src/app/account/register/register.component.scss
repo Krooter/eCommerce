@@ -121,6 +121,7 @@ p a.terms {
   
   .check-container input:checked ~ .checkmark {
     background-color: black;
+    outline: none;
   }
   
   .checkmark:after {
