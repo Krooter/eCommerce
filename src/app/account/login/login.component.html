@@ -5,13 +5,13 @@
                 <p class="mt-2 mb-4 title">LOG IN</p>
                 <p class="mt-2 mb-2 terms">Forgot Your Password?</p>
                 <div class="box">
-                    <form>
+                    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
                         <div>
-                            <input type="text" name="email" required>
+                            <input formControlName="email" type="text" name="email" required>
                             <label>Email</label>
                         </div>
                         <div>
-                            <input type="password" name="password" required>
+                            <input formControlName="password" type="password" name="password" required>
                             <label>Password</label>
                         </div>
                         <button class="btn-login mt-4" type="submit">GET UNLOCKED <i class="fa fa-long-arrow-alt-right ml-2"></i></button>

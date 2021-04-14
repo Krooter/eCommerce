@@ -8,6 +8,7 @@ import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { NgxGalleryModule } from '@kolkov/ngx-gallery';
 import { OrderTotalsComponent } from './components/order-totals/order-totals.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [PagingHeaderComponent, PagerComponent, OrderTotalsComponent],
@@ -17,7 +18,8 @@ import { OrderTotalsComponent } from './components/order-totals/order-totals.com
     FontAwesomeModule,
     CarouselModule.forRoot(),
     MDBBootstrapModule.forRoot(),
-    NgxGalleryModule
+    NgxGalleryModule,
+    ReactiveFormsModule
   ],
   exports: [
     PaginationModule,
@@ -27,7 +29,8 @@ import { OrderTotalsComponent } from './components/order-totals/order-totals.com
     CarouselModule,
     MDBBootstrapModule,
     NgxGalleryModule,
-    OrderTotalsComponent
+    OrderTotalsComponent,
+    ReactiveFormsModule
   ]
 })
 export class SharedModule { }

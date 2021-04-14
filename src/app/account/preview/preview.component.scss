@@ -1,0 +1,13 @@
+.btn-login {
+    background-color: black;
+    color: white;
+    outline: 0;
+    border: none;
+    padding: 3px 10px;
+    width: 50%;
+    height: 50px;
+    font-weight: bold;
+    &:hover{
+        color:rgb(138, 137, 137)
+    }
+}

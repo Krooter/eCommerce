@@ -1,8 +1,10 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { faTruck, faShoppingCart, faSearch, faUser, faTimes, faBars } from '@fortawesome/free-solid-svg-icons';
 import { Observable } from 'rxjs';
+import { AccountService } from 'src/app/account/account.service';
 import { CartService } from 'src/app/cart/cart.service';
 import { ICart } from 'src/app/shared/_models/cart';
+import { IUser } from 'src/app/shared/_models/user';
 
 @Component({
   selector: 'app-nav-bar',
@@ -18,11 +20,13 @@ export class NavBarComponent implements OnInit {
   faBars = faBars;
   isOpened = false;
   cart$: Observable<ICart>;
+  currentUser$: Observable<IUser>;
   stringArray = ["30-DAY RETURNS AND FREE SHIPPING ON ORDERS $49+", "FREE SHIPPING & RETURNS WITH KROOTS UNLOCKED", "NANO X1. AVAILABLE NOW. GET IN ON IT."];
 
-  constructor(private cartService: CartService) { }
+  constructor(private cartService: CartService, private accountService: AccountService) { }
 
   ngOnInit(): void {
+    this.currentUser$ = this.accountService.currentUser$;
     this.cart$ = this.cartService.cart$;
   }
 

@@ -15,6 +15,21 @@
     justify-content: space-between;
 }
 
+.logged-text{
+    font-weight: 300;
+    margin-left: 25px;
+}
+
+.box{
+    display: flex;
+    outline: black;
+    border: 1px solid black;
+    width: 100%;
+    height: 50px;
+    justify-content: flex-start;
+    align-items: center;
+}
+
 .btn-incr-decr{
     cursor: pointer;
     font-size: 1.1em;

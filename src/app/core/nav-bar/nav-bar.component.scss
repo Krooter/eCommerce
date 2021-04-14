@@ -138,9 +138,13 @@ a {
         outline: 0;
     }
 }
+
 .user-link {
     padding-top: 3%;
     display: flex;
+    &:focus{
+        outline: 0;
+    }
 }
 .cart-no {
     position: absolute;
@@ -181,7 +185,7 @@ a {
         padding-left: 10%;
     }
 }
-@media(max-width: 558px){
+@media(max-width: 578px){
     .right{
         justify-content: flex-end; 
         display: flex; 
