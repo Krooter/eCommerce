@@ -1,5 +1,5 @@
 <div class="card h-100 box-shadow">
-    <mdb-badge class="new" [pill]="true" [danger]=true *ngIf="calculateDate() > 20">NEW</mdb-badge>
+    <mdb-badge class="new" [pill]="true" [danger]=true *ngIf="calculateDate()">NEW</mdb-badge>
     <mdb-badge class="announce" [pill]="true" [danger]=true>SALE</mdb-badge>
     <img routerLink="/shop/{{product.id}}" src="{{product.photo[0].photoUrl1}}" alt="{{ product.name }}" class="img-container"/>
     <div class="card-body d-flex flex-column">

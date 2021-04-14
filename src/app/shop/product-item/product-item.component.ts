@@ -14,16 +14,21 @@ export class ProductItemComponent implements OnInit {
   @Input() product: IProduct;
   faShopingCart = faShoppingCart
   today = new Date();
+  dateToVerify: Date;
   dateAdedd: Date;
 
   constructor(private cartService: CartService, private toast: ToastrService) { }
 
   ngOnInit(): void {
     this.dateAdedd = new Date(this.product.dateAdded);
+    this.dateToVerify = new Date(this.dateAdedd.getDate() + 20);
   }
 
-  calculateDate(): number{
-    return this.today.getTime() - this.dateAdedd.getTime();
+  calculateDate(): boolean{
+    if(this.today.getTime() - this.dateAdedd.getTime() < this.today.getTime() - this.dateToVerify.getTime()){
+      return true;
+    }
+    return false;
   }
 
   addItemToCart() {
