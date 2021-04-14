@@ -1,0 +1,184 @@
+input[type=text], input[type=password], input[type=name] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid black;
+    box-sizing: border-box;
+}
+
+.btn-login {
+    background-color: black;
+    margin-top: 20px;
+    color: white;
+    outline: 0;
+    border: none;
+    padding: 3px 10px;
+    width: 50%;
+    height: 50px;
+    font-weight: bold;
+    &:hover{
+        color:rgb(138, 137, 137)
+    }
+}
+
+.box form div {
+    position: relative;
+}
+
+.box div input:focus{
+    outline: none;
+}
+
+p.title {
+    font-size: 2.6rem;
+    font-weight: bold;
+    line-height: 0.9;
+}
+
+p.terms {
+    text-decoration: underline;
+    width: fit-content;
+    &:hover{
+        color: white;
+        background-color: black;
+    }
+}
+
+label a.terms{
+    text-decoration: underline;
+    width: fit-content;
+    &:hover{
+        color: white;
+        background-color: black;
+    }
+}
+
+p a.terms {
+    text-decoration: underline;
+    &:hover{
+        color: white;
+        background-color: black;
+    }
+}
+
+.box form div label {
+    position: absolute;
+    top: 18px;
+    pointer-events: none;
+    left: 20px;
+    transition: .5s;
+    color: #999;
+    background-color: white;
+    padding: 0px 5px;
+}
+
+.box div input:focus ~ label,
+.box div input:valid ~ label{
+    outline: 0;
+    top: -6px;
+    left: 20px;
+    font-size: 14px;
+}
+
+.check-container {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
+  .check-container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+  
+  .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: transparent;
+    border: 1px solid #ccc;
+    &:focus {
+        outline: none;
+    }
+  }
+  
+  .check-container:hover input ~ .checkmark {
+    background-color: transparent;
+    outline: 1px solid black;
+  }
+  
+  .check-container input:checked ~ .checkmark {
+    background-color: black;
+  }
+  
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  .check-container input:checked ~ .checkmark:after {
+    display: block;
+  }
+  
+  .check-container .checkmark:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+
+  .checkdot {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+  }
+  
+  .check-container:hover input ~ .checkdot {
+    border: 1px solid black;
+  }
+  
+  .check-container input:checked ~ .checkdot {
+    background-color: black;
+  }
+  
+  .checkdot:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  .check-container input:checked ~ .checkdot:after {
+    display: block;
+  }
+  
+  .check-container .checkdot:after {
+    top: 7.9px;
+    left: 7.9px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: white;
+  }

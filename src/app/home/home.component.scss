@@ -41,17 +41,11 @@
     font-weight: bold;
     font-size: 3rem;
     position: absolute;
-}
-
-.primary-font2 {
-    font-weight: bold;
-    font-size: 3rem;
-    margin-top: 50px;
-    position: absolute;
+    line-height: 0.8;
 }
 
 .secondary-font {
-    margin-top: 130px;
+    margin-top: 90px;
     font-size: 1rem;
 }
 
@@ -76,6 +70,10 @@
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
     background-color: rgba(255, 255, 255, 0.274);
     color: black;
+}
+
+div button i.fa.fa-long-arrow-alt-right:hover{
+    transition-duration: 0.4s;
 }
 
 @media (max-width: 366px){
