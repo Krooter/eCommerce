@@ -5,43 +5,42 @@
                 <p class="mt-2 mb-4 title">REGISTER</p>
 
                 <div class="box">
-                    <form>
+                    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
                         <div>
-                            <input type="text" name="email" required>
-                            <label>Email</label>
+                            <app-text-input formControlName="email" [label]="'Email'"></app-text-input>
                         </div>
                         <div>
-                            <input type="password" name="password" required>
-                            <label>Password</label>
+                            <app-text-input formControlName="password" [label]="'Password'" [type]="'password'"></app-text-input>
                         </div>
                         <div>
-                            <input type="name" name="name" required>
-                            <label>Name</label>
+                            <app-text-input formControlName="displayName" [label]="'Name'"></app-text-input>
                         </div>
                         <h2 class="mt-4"><strong>GENDER</strong></h2>
                         <label class="check-container mr-5" style="display: inline-block;">Female
-                            <input type="radio" name="radio" required>
+                            <input formControlName="gender" [value]="gender[0]" type="radio" name="gender" required>
                             <span class="checkdot"></span>
                         </label>
                         <label class="check-container mr-5" style="display: inline-block;">Male
-                            <input type="radio" name="radio" required>
+                            <input formControlName="gender" type="radio" name="gender" [value]="gender[1]" required>
                             <span class="checkdot"></span>
                         </label>
                         <label class="check-container mr-5" style="display: inline-block;">Other
-                            <input type="radio" name="radio" required>
+                            <input formControlName="gender" type="radio" name="gender" [value]="gender[2]" required>
                             <span class="checkdot"></span>
                         </label>
                         <label class="check-container mt-3">Yes, I am over 13 years old.
-                            <input type="checkbox" required>
+                            <input formControlName="ageReq" type="checkbox" required>
                             <span class="checkmark"></span>
                         </label>
+                        <p *ngIf="registerForm.value.ageReq?.valid !== true"><strong class="text-danger ml-4" style="font-size: 14px;">This field is required!</strong></p>
 
                         <label class="check-container">I have read and accepted <a class="terms">Terms & Conditions</a>,
-                            the <a class="terms">Krooter privacy policy</a> and the <a class="terms">Reebok UNLOCKED
+                            the <a class="terms">Krooter privacy policy</a> and the <a class="terms">Krooter UNLOCKED
                                 Terms & Conditions</a>
-                            <input type="checkbox" required>
+                            <input formControlName="terms" type="checkbox" required>
                             <span class="checkmark"></span>
                         </label>
+                        <p><strong class="text-danger ml-4" style="font-size: 14px;">This field is required!</strong></p>
                         <button class="btn-login" type="submit">GET UNLOCKED <i
                                 class="fa fa-long-arrow-alt-right ml-2"></i></button>
                     </form>

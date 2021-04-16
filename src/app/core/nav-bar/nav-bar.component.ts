@@ -1,4 +1,5 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
 import { faTruck, faShoppingCart, faSearch, faUser, faTimes, faBars } from '@fortawesome/free-solid-svg-icons';
 import { Observable } from 'rxjs';
 import { AccountService } from 'src/app/account/account.service';
@@ -23,11 +24,16 @@ export class NavBarComponent implements OnInit {
   currentUser$: Observable<IUser>;
   stringArray = ["30-DAY RETURNS AND FREE SHIPPING ON ORDERS $49+", "FREE SHIPPING & RETURNS WITH KROOTS UNLOCKED", "NANO X1. AVAILABLE NOW. GET IN ON IT."];
 
-  constructor(private cartService: CartService, private accountService: AccountService) { }
+  constructor(private router: Router, private cartService: CartService, private accountService: AccountService) { }
 
   ngOnInit(): void {
     this.currentUser$ = this.accountService.currentUser$;
     this.cart$ = this.cartService.cart$;
+  }
+
+  logout(){
+    this.accountService.logout();
+    this.router.navigateByUrl("/");
   }
 
   isOpen(){

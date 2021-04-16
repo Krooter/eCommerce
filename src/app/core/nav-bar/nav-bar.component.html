@@ -24,25 +24,25 @@
             <a class="navbar-brand nav-dark logo" style="padding-left: 40%;">Krooter</a>
             <ul>
                 <li>
-                    <a [routerLink]="['/shop']" >MAN</a>
+                    <a [routerLink]="['/shop']">MAN</a>
                 </li>
                 <li>
-                    <a [routerLink]="['/shop']" >WOMAN</a>
+                    <a [routerLink]="['/shop']">WOMAN</a>
                 </li>
                 <li>
-                    <a [routerLink]="['/shop']" >KIDS</a>
+                    <a [routerLink]="['/shop']">KIDS</a>
                 </li>
                 <li>
-                    <a [routerLink]="['/shop']" >SALES</a>
+                    <a [routerLink]="['/shop']">SALES</a>
                 </li>
                 <li>
-                    <a [routerLink]="['/shop']" >SEARCH</a>
+                    <a [routerLink]="['/shop']">SEARCH</a>
                 </li>
                 <li>
-                    <a [routerLink]="['/shop']" >SHOPPING CART</a>
+                    <a [routerLink]="['/shop']">SHOPPING CART</a>
                 </li>
                 <li>
-                    <a [routerLink]="['/shop']" >USER PROFILE</a>
+                    <a [routerLink]="['/shop']">USER PROFILE</a>
                 </li>
                 <li>
                     <a (click)="isOpen()">CLOSE</a>
@@ -67,16 +67,20 @@
                     </div>
                 </div>
                 <div class="col-1 navbar-links navbar" style="padding-top: 0.3%; padding-right: 9%;">
-                    <a class="navbar-brand nav-dark" style="font-weight: bold;" [routerLink]="['/shop']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">WOMAN</a>
+                    <a class="navbar-brand nav-dark" style="font-weight: bold;" [routerLink]="['/shop']"
+                        routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">WOMAN</a>
                 </div>
                 <div class="col-1 navbar-links navbar" style="padding-top: 0.3%;">
-                    <a class="navbar-brand nav-dark" style="font-weight: bold;" [routerLink]="['/shop']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">MAN</a>
+                    <a class="navbar-brand nav-dark" style="font-weight: bold;" [routerLink]="['/shop']"
+                        routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">MAN</a>
                 </div>
                 <div class="col-1 navbar-links navbar" style="padding-top: 0.3%;">
-                    <a class="navbar-brand nav-dark" style="font-weight: bold;" [routerLink]="['/shop']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">KIDS</a>
+                    <a class="navbar-brand nav-dark" style="font-weight: bold;" [routerLink]="['/shop']"
+                        routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">KIDS</a>
                 </div>
                 <div class="col-1 navbar-links navbar" style="padding-top: 0.3%;">
-                    <a class="navbar-brand nav-dark" [routerLink]="['/shop']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">SALES</a>
+                    <a class="navbar-brand nav-dark" [routerLink]="['/shop']" routerLinkActive="active"
+                        [routerLinkActiveOptions]="{exact: true}">SALES</a>
                 </div>
                 <div class="col position-relative responsive" style="justify-content: flex-end;">
                     <div class="navbar-brand nav-dark d-inline-flex position-relative">
@@ -88,19 +92,55 @@
                             <fa-icon class="search-link2" [icon]="faSearch"
                                 style="padding-right: 15%; padding-left: 5%; padding-top: 3%;" href="#"></fa-icon>
                         </button>
-                        <ng-container *ngIf="(currentUser$ | async) === null">
+                        <div class="dropdown d-flex" *ngIf="(currentUser$ | async) === null">
                             <button class='btn'>
-                                <fa-icon href="#" class="user-link" [icon]="faUser" routerLink="/account/login"></fa-icon>
+                                <fa-icon href="#" class="user-link" [icon]="faUser" routerLink="/account/login">
+                                </fa-icon>
                             </button>
-                        </ng-container>
-                        <ng-container *ngIf="currentUser$ | async">
+                            <div class="dropdown-content">
+                                <p></p>
+                                <a style="text-align: center;" routerLink="/account/login">LOGIN</a>
+                            </div>
+                        </div>
+                        <div class="dropdown d-flex" *ngIf="currentUser$ | async">
                             <button class='btn'>
-                                <fa-icon href="#" class="user-link" [icon]="faUser" routerLink="/account/preview"></fa-icon>
+                                <fa-icon href="#" class="user-link" [icon]="faUser" routerLink="/account/preview">
+                                </fa-icon>
                             </button>
-                        </ng-container>
-                        <button class='btn'>
-                            <fa-icon class="cart-link" routerLink="/cart" [icon]="faShoppingCart" style="padding-right: 15%;"></fa-icon>
-                        </button>
+                            <p></p>
+                            <div class="dropdown-content" style="text-align: start;">
+                                <p></p>
+                                <a routerLink="/account/preview"> <i class="fa fa-user mr-2"></i> USER ACCOUNT</a>
+                                <a routerLink="/account/orders"><i class="fa fa-history mr-2"></i> ORDER VIEW</a>
+                                <a style="border-top: 1px solid #ccc" (click)="logout()"><i class="fa fa-sign-out-alt mr-2"></i>LOGOUT</a>
+                            </div>
+                        </div>
+                        <div class="dropdown d-flex" *ngIf="(cart$ | async) === null">
+                            <button class='btn'>
+                                <fa-icon class="cart-link" routerLink="/cart" [icon]="faShoppingCart"
+                                    style="padding-right: 15%;"></fa-icon>
+                            </button>
+                            <div class="cart-dropdown-content">
+                                <p></p>
+                                <div class="empty-cart">YOUR CART IS EMPTY</div>
+                            </div>
+                        </div>
+                        <div class="dropdown d-flex" *ngIf="cart$ | async">
+                            <button class='btn'>
+                                <fa-icon class="cart-link" routerLink="/cart" [icon]="faShoppingCart"
+                                    style="padding-right: 15%;"></fa-icon>
+                            </button>
+                            <div class="cart-dropdown-content">
+                                <p></p>
+                                <div class="cart-info-dropdown d-flex" *ngFor="let item of (cart$ | async).items">
+                                    <img src="{{item.pictureUrl}}">
+                                    <div style="flex-direction: column; padding-top: 4px;">
+                                        <a routerLink="/cart">{{item.productName}}</a>
+                                        <div>{{item.price | currency}}</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                         <div *ngIf="(cart$ | async) as cart" class="cart-no">{{cart.items.length}}</div>
                     </div>
                 </div>

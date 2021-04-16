@@ -7,17 +7,17 @@
                 <div class="box">
                     <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
                         <div>
-                            <input formControlName="email" type="text" name="email" required>
-                            <label>Email</label>
+                            <app-text-input formControlName="email" [label]="'Email'"></app-text-input>
                         </div>
                         <div>
-                            <input formControlName="password" type="password" name="password" required>
-                            <label>Password</label>
+                            <app-text-input formControlName="password" [label]="'Password'" [type]="'password'"></app-text-input>
                         </div>
-                        <button class="btn-login mt-4" type="submit">GET UNLOCKED <i class="fa fa-long-arrow-alt-right ml-2"></i></button>
+                        <button class="btn-login mt-4" type="submit">GET UNLOCKED <i
+                                class="fa fa-long-arrow-alt-right ml-2"></i></button>
                     </form>
                 </div>
-                <p class="mt-4">By clicking 'Get Unlocked' you agree to our website <a class="terms">Terms & Conditions</a>, <a class="terms">Krooter Privacy Notice</a> 
+                <p class="mt-4">By clicking 'Get Unlocked' you agree to our website <a class="terms">Terms &
+                        Conditions</a>, <a class="terms">Krooter Privacy Notice</a>
                     and <a class="terms">Krooter UNLOCKED Terms</a> & <a class="terms">Conditions</a>.</p>
             </div>
             <div class="col-md-6">
@@ -25,11 +25,14 @@
                 <p class="mt-4">Join the Krooter Creators Club membership program:</p>
                 <p class="ml-2"><i class="fa fa-check"></i> Get immediate access to all Challenger level rewards.</p>
                 <p class="ml-2"><i class="fa fa-check"></i> Earn access to shop limited edition products.</p>
-                <p class="ml-2"><i class="fa fa-check"></i> Level up for exclusive access to sport, yoga and music events.</p>
+                <p class="ml-2"><i class="fa fa-check"></i> Level up for exclusive access to sport, yoga and music
+                    events.</p>
                 <p class="ml-2"><i class="fa fa-check"></i> Receive our best special offers and promotions.</p>
                 <p class="ml-2"><i class="fa fa-check"></i> Free shipping for Creators Club Members.</p>
-                <p class="">Join now and start earning points to access new levels and rewards. It's time to unlock the best of adidas.</p>
-                <button routerLink="/account/register" class="btn-login mt-4">JOIN THE CLUB <i class="fa fa-long-arrow-alt-right ml-2"></i></button>
+                <p class="">Join now and start earning points to access new levels and rewards. It's time to unlock the
+                    best of adidas.</p>
+                <button routerLink="/account/register" class="btn-login mt-4">JOIN THE CLUB <i
+                        class="fa fa-long-arrow-alt-right ml-2"></i></button>
             </div>
         </div>
     </div>

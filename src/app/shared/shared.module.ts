@@ -9,9 +9,10 @@ import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { NgxGalleryModule } from '@kolkov/ngx-gallery';
 import { OrderTotalsComponent } from './components/order-totals/order-totals.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { TextInputComponent } from './components/text-input/text-input.component';
 
 @NgModule({
-  declarations: [PagingHeaderComponent, PagerComponent, OrderTotalsComponent],
+  declarations: [PagingHeaderComponent, PagerComponent, OrderTotalsComponent, TextInputComponent],
   imports: [
     CommonModule,
     PaginationModule.forRoot(),
@@ -30,7 +31,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     MDBBootstrapModule,
     NgxGalleryModule,
     OrderTotalsComponent,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    TextInputComponent
   ]
 })
 export class SharedModule { }
