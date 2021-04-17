@@ -10,19 +10,12 @@ namespace Data.Services
 {
     public class OrderService : IOrderService
     {
-        private readonly IGenericRepository<Order> _orderRepo;
-        private readonly IGenericRepository<Delivery> _deliveryRepo;
-        private readonly IGenericRepository<Photo> _photoRepo;
-        private readonly IGenericRepository<Product> _productRepo;
+        private readonly IUnitOfWork _unitOfWork;
         private readonly ICartRepository _cartRepo;
 
-        public OrderService(IGenericRepository<Order> orderRepo, IGenericRepository<Delivery> deliveryRepo, IGenericRepository<Photo> photoRepo,
-            IGenericRepository<Product> productRepo, ICartRepository cartRepo)
+        public OrderService(IUnitOfWork unitOfWork, ICartRepository cartRepo)
         {
-            _orderRepo = orderRepo;
-            _deliveryRepo = deliveryRepo;
-            _photoRepo = photoRepo;
-            _productRepo = productRepo;
+            _unitOfWork = unitOfWork;
             _cartRepo = cartRepo;
         }
 
@@ -30,23 +23,36 @@ namespace Data.Services
         {
             //get cart from repo
             var cart = await _cartRepo.GetCartAsync(cartId);
+           
             //get items from product repo
             var items = new List<OrderItem>();
             foreach(var item in cart.Items)
             {
-                var productItem = await _productRepo.GetByIdAsync(item.Id);
-                var photo = await _photoRepo.GetByIdAsync(item.Id);
+                var productItem = await _unitOfWork.Repository<Product>().GetByIdAsync(item.Id);
+                var photo = await _unitOfWork.Repository<Photo>().GetByIdAsync(item.Id);
                 var itemOrdered = new ProductItemOrdered(productItem.Id, productItem.Name, photo.PhotoUrl1);
                 var orderItem = new OrderItem(itemOrdered, productItem.Price, item.Quantity);
                 items.Add(orderItem);
             }
+            
             //get delivery from repo
-            var delivery = await _deliveryRepo.GetByIdAsync(deliveryId);
+            var delivery = await _unitOfWork.Repository<Delivery>().GetByIdAsync(deliveryId);
+            
             //calc subtotal
             var subtotal = items.Sum(item => item.Price * item.Quantity);
+            
             //create order
             var order = new Order(items, buyerEmail, shippingAddress, delivery, subtotal);
+            _unitOfWork.Repository<Order>().Add(order);
+
             //save to db
+            var result = await _unitOfWork.Complete();
+
+            if (result <= 0) return null;
+
+            //delete cart
+            await _cartRepo.DeleteCartAsync(cartId);
+
             //return order
             return order;
         }
