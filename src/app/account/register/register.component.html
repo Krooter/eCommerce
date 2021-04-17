@@ -32,7 +32,7 @@
                             <input formControlName="ageReq" type="checkbox" required>
                             <span class="checkmark"></span>
                         </label>
-                        <p *ngIf="registerForm.value.ageReq?.valid !== true"><strong class="text-danger ml-4" style="font-size: 14px;">This field is required!</strong></p>
+                        <p *ngIf="!registerForm.get('ageReq').valid && registerForm.get('ageReq').touched"><strong class="text-danger ml-4" style="font-size: 14px;">This field is required!</strong></p>
 
                         <label class="check-container">I have read and accepted <a class="terms">Terms & Conditions</a>,
                             the <a class="terms">Krooter privacy policy</a> and the <a class="terms">Krooter UNLOCKED
@@ -40,7 +40,9 @@
                             <input formControlName="terms" type="checkbox" required>
                             <span class="checkmark"></span>
                         </label>
-                        <p><strong class="text-danger ml-4" style="font-size: 14px;">This field is required!</strong></p>
+                        
+                        <p *ngIf="!registerForm.get('terms').valid && registerForm.get('terms').touched"><strong class="text-danger ml-4" style="font-size: 14px;">This field is required!</strong></p>
+                        
                         <button class="btn-login" type="submit">GET UNLOCKED <i
                                 class="fa fa-long-arrow-alt-right ml-2"></i></button>
                     </form>

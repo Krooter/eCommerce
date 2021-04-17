@@ -10,7 +10,9 @@
     <label for="{{label}}">{{label}}</label>
     <div class="invalid-feedback mb-2 ml-4" *ngIf="(controlDir && controlDir.control && !controlDir.control.valid && controlDir.control.touched)">
         <span *ngIf="controlDir.control.errors?.required"><strong style="font-size: 14px;">Please enter a {{label}}</strong></span>
-        <span *ngIf="controlDir.control.errors?.pattern"><strong style="font-size: 14px;">Please enter a valid e-mail address</strong></span>
+        <span *ngIf="controlDir.control.errors?.pattern && label === 'Email'"><strong style="font-size: 14px;">Please enter a valid e-mail address</strong></span>
+        <span *ngIf="controlDir.control.errors?.emailExist"><strong style="font-size: 14px;">Email address is in use</strong></span>
+        <span *ngIf="controlDir.control.errors?.pattern && label === 'Password'"><strong style="font-size: 14px;">Minimum eight characters, one letter, one number and one special character.</strong></span>
         <span *ngIf="controlDir.control.errors?.minlength"><strong style="font-size: 14px;">Please enter your full name</strong></span>
     </div>
 </div>

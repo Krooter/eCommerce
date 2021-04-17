@@ -22,9 +22,7 @@ export class AppComponent implements OnInit {
   loadCart(){
     const cartId = localStorage.getItem("cart_id");
     if (cartId){
-      this.cartService.getCart(cartId).subscribe(() => {
-        console.log("Initialize cart")
-      }, error => {
+      this.cartService.getCart(cartId).subscribe(() => {}, error => {
         console.log(error);
       })
     }
@@ -32,13 +30,9 @@ export class AppComponent implements OnInit {
 
   loadUser(){
     const token = localStorage.getItem("token");
-    if(token) {
-      this.accountService.loadCurrentUser(token).subscribe(() => {
-        console.log("User loaded");
-      }, error => {
+      this.accountService.loadCurrentUser(token).subscribe(() => {}, error => {
         console.log(error);
       })
-    }
   }
 }
 
