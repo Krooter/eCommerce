@@ -1,4 +1,5 @@
 ﻿using Core.Entities;
+using Core.Entities.Order;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
@@ -66,6 +67,20 @@ namespace Data.BLogic
                     foreach (var item in products)
                     {
                         context.Products.Add(item);
+                    }
+
+                    await context.SaveChangesAsync();
+                }
+
+                if (!context.Delivery.Any())
+                {
+                    var deliveryData = File.ReadAllText("../Data/BLogic/Seed/delivery.json");
+
+                    var delivery = JsonSerializer.Deserialize<List<Delivery>>(deliveryData);
+
+                    foreach (var item in delivery)
+                    {
+                        context.Delivery.Add(item);
                     }
 
                     await context.SaveChangesAsync();

@@ -16,6 +16,7 @@ namespace API.Helpers
                 .ForMember(d => d.ProductCategory, o => o.MapFrom(s => s.ProductCategory.Name));
 
             CreateMap<Address, AddressDTO>().ReverseMap();
+            CreateMap<AddressDTO, Core.Entities.Order.Address>();
             CreateMap<CustomerCartDTO, CustomerCart>();
             CreateMap<CartItemDTO, CartItem>();
         }
