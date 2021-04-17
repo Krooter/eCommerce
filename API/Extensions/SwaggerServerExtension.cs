@@ -12,24 +12,24 @@ namespace API.Extensions
             {
                 c.SwaggerDoc("v1.0", new OpenApiInfo { Title = "eCommerce API", Version = "v1.0" });
 
-                var securitySchem = new OpenApiSecurityScheme
-                {
-                    Description = "JWT Auth Bearer Schem",
-                    Name = "Authorization",
-                    In = ParameterLocation.Header,
-                    Type = SecuritySchemeType.Http,
-                    Scheme = "bearer",
-                    Reference = new OpenApiReference
-                    {
-                        Type = ReferenceType.SecurityScheme,
-                        Id = "bearer"
-                    }
-                };
+                //var securitySchem = new OpenApiSecurityScheme
+                //{
+                //    Description = "JWT Auth Bearer Schem",
+                //    Name = "Authorization",
+                //    In = ParameterLocation.Header,
+                //    Type = SecuritySchemeType.Http,
+                //    Scheme = "bearer",
+                //    Reference = new OpenApiReference
+                //    {
+                //        Type = ReferenceType.SecurityScheme,
+                //        Id = "bearer"
+                //    }
+                //};
 
-                c.AddSecurityDefinition("Bearer", securitySchem);
-                var securityRequiments = new OpenApiSecurityRequirement { { securitySchem, new[] { "bearer" } } };
+                //c.AddSecurityDefinition("Bearer", securitySchem);
+                //var securityRequiments = new OpenApiSecurityRequirement { { securitySchem, new[] { "bearer" } } };
 
-                c.AddSecurityRequirement(securityRequiments);
+                //c.AddSecurityRequirement(securityRequiments);
             });
 
             return services;
