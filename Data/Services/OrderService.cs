@@ -1,6 +1,7 @@
 ﻿using Core.Entities;
 using Core.Entities.Order;
 using Core.Interfaces;
+using Core.Specification;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -57,19 +58,21 @@ namespace Data.Services
             return order;
         }
 
-        public Task<IReadOnlyList<Delivery>> GetDeliveryAsync()
+        public async Task<IReadOnlyList<Delivery>> GetDeliveryAsync()
         {
-            throw new NotImplementedException();
+            return await _unitOfWork.Repository<Delivery>().ListAllAsync();
         }
 
-        public Task<Order> GetOrderByIdAsync(int id, string buyerEmail)
+        public async Task<Order> GetOrderByIdAsync(int id, string buyerEmail)
         {
-            throw new NotImplementedException();
+            var spec = new OrderItemsSpecification(id, buyerEmail);
+            return await _unitOfWork.Repository<Order>().GetEntityWithSpec(spec);
         }
 
-        public Task<IReadOnlyList<Order>> GetOrdersAsync(string buyerEmail)
+        public async Task<IReadOnlyList<Order>> GetOrdersAsync(string buyerEmail)
         {
-            throw new NotImplementedException();
+            var spec = new OrderItemsSpecification(buyerEmail);
+            return await _unitOfWork.Repository<Order>().ListAsync(spec);
         }
     }
 }

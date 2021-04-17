@@ -6,6 +6,7 @@ using Core.Entities.Order;
 using Core.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace API.Controllers
@@ -37,6 +38,37 @@ namespace API.Controllers
             }
 
             return Ok(order);
+        }
+
+        [HttpGet]
+        public async Task<ActionResult<IReadOnlyList<Order>>> GetOrdersForUser()
+        {
+            var email = HttpContext.User.RetrieveEmailFromPrincipal();
+
+            var orders = await _orderService.GetOrdersAsync(email);
+
+            return Ok(orders);
+        }
+
+        [HttpGet("{id}")]
+        public async Task<ActionResult<Order>> GetOrderByIdForUser(int id)
+        {
+            var email = HttpContext.User.RetrieveEmailFromPrincipal();
+
+            var order = await _orderService.GetOrderByIdAsync(id, email);
+
+            if(order == null)
+            {
+                return NotFound(new ApiResponse(404));
+            }
+
+            return order;
+        }
+
+        [HttpGet("delivery")]
+        public async Task<ActionResult<IReadOnlyList<Delivery>>> GetDelivery()
+        {
+            return Ok(await _orderService.GetDeliveryAsync());
         }
     }
 }
