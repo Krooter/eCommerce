@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "2DRziwr3LOjauuJrcNWjBl/J5v64D01PJFARYbHO7L7MzcXJqZpEeTDJQyQHr34mniyBhyWG2vKrbJv3e6Tk/A==",
+  "dgSpecHash": "fc5wPfMQ4ecrfARFRY6RAN6qLqLX9OhqeKMMajwI6E/6PviOyip5UmSFHduH26e+aLBq7Yk6QEvdbwYYpJpOqg==",
   "success": true,
   "projectFilePath": "D:\\.NET Core\\eCommerce\\api\\API.csproj",
   "expectedPackageFiles": [
@@ -63,12 +63,14 @@
     "C:\\Users\\cpole\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
     "C:\\Users\\cpole\\.nuget\\packages\\microsoft.win32.registry\\5.0.0\\microsoft.win32.registry.5.0.0.nupkg.sha512",
     "C:\\Users\\cpole\\.nuget\\packages\\microsoft.win32.systemevents\\5.0.0\\microsoft.win32.systemevents.5.0.0.nupkg.sha512",
+    "C:\\Users\\cpole\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
     "C:\\Users\\cpole\\.nuget\\packages\\pipelines.sockets.unofficial\\2.2.0\\pipelines.sockets.unofficial.2.2.0.nupkg.sha512",
     "C:\\Users\\cpole\\.nuget\\packages\\sqlitepclraw.bundle_e_sqlite3\\2.0.4\\sqlitepclraw.bundle_e_sqlite3.2.0.4.nupkg.sha512",
     "C:\\Users\\cpole\\.nuget\\packages\\sqlitepclraw.core\\2.0.4\\sqlitepclraw.core.2.0.4.nupkg.sha512",
     "C:\\Users\\cpole\\.nuget\\packages\\sqlitepclraw.lib.e_sqlite3\\2.0.4\\sqlitepclraw.lib.e_sqlite3.2.0.4.nupkg.sha512",
     "C:\\Users\\cpole\\.nuget\\packages\\sqlitepclraw.provider.dynamic_cdecl\\2.0.4\\sqlitepclraw.provider.dynamic_cdecl.2.0.4.nupkg.sha512",
     "C:\\Users\\cpole\\.nuget\\packages\\stackexchange.redis\\2.2.4\\stackexchange.redis.2.2.4.nupkg.sha512",
+    "C:\\Users\\cpole\\.nuget\\packages\\stripe.net\\39.45.0\\stripe.net.39.45.0.nupkg.sha512",
     "C:\\Users\\cpole\\.nuget\\packages\\swashbuckle.aspnetcore\\6.1.2\\swashbuckle.aspnetcore.6.1.2.nupkg.sha512",
     "C:\\Users\\cpole\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.1.2\\swashbuckle.aspnetcore.swagger.6.1.2.nupkg.sha512",
     "C:\\Users\\cpole\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.1.2\\swashbuckle.aspnetcore.swaggergen.6.1.2.nupkg.sha512",

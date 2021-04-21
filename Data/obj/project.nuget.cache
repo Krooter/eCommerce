@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "nW/E8XH7EZCgihkLUupYmtk5irgoeIC5O/EzSGUleJk/Kmeul+GLKKHRfgoRfz1kRk6V19Pkuo8q/XOYygE8yA==",
+  "dgSpecHash": "jENNX7aocXYjrV76hAd3Q2E9A+MSqdyeBK7etp74HE6kLpHOyCMxA5PhyckYDOkMeBBon/yBJfrEjmvv1W5pJQ==",
   "success": true,
   "projectFilePath": "D:\\.NET Core\\eCommerce\\Data\\Data.csproj",
   "expectedPackageFiles": [
@@ -57,12 +57,14 @@
     "C:\\Users\\cpole\\.nuget\\packages\\microsoft.netcore.platforms\\5.0.0\\microsoft.netcore.platforms.5.0.0.nupkg.sha512",
     "C:\\Users\\cpole\\.nuget\\packages\\microsoft.win32.registry\\5.0.0\\microsoft.win32.registry.5.0.0.nupkg.sha512",
     "C:\\Users\\cpole\\.nuget\\packages\\microsoft.win32.systemevents\\5.0.0\\microsoft.win32.systemevents.5.0.0.nupkg.sha512",
+    "C:\\Users\\cpole\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
     "C:\\Users\\cpole\\.nuget\\packages\\pipelines.sockets.unofficial\\2.2.0\\pipelines.sockets.unofficial.2.2.0.nupkg.sha512",
     "C:\\Users\\cpole\\.nuget\\packages\\sqlitepclraw.bundle_e_sqlite3\\2.0.4\\sqlitepclraw.bundle_e_sqlite3.2.0.4.nupkg.sha512",
     "C:\\Users\\cpole\\.nuget\\packages\\sqlitepclraw.core\\2.0.4\\sqlitepclraw.core.2.0.4.nupkg.sha512",
     "C:\\Users\\cpole\\.nuget\\packages\\sqlitepclraw.lib.e_sqlite3\\2.0.4\\sqlitepclraw.lib.e_sqlite3.2.0.4.nupkg.sha512",
     "C:\\Users\\cpole\\.nuget\\packages\\sqlitepclraw.provider.dynamic_cdecl\\2.0.4\\sqlitepclraw.provider.dynamic_cdecl.2.0.4.nupkg.sha512",
     "C:\\Users\\cpole\\.nuget\\packages\\stackexchange.redis\\2.2.4\\stackexchange.redis.2.2.4.nupkg.sha512",
+    "C:\\Users\\cpole\\.nuget\\packages\\stripe.net\\39.45.0\\stripe.net.39.45.0.nupkg.sha512",
     "C:\\Users\\cpole\\.nuget\\packages\\system.buffers\\4.5.0\\system.buffers.4.5.0.nupkg.sha512",
     "C:\\Users\\cpole\\.nuget\\packages\\system.collections.immutable\\5.0.0\\system.collections.immutable.5.0.0.nupkg.sha512",
     "C:\\Users\\cpole\\.nuget\\packages\\system.componentmodel.annotations\\5.0.0\\system.componentmodel.annotations.5.0.0.nupkg.sha512",

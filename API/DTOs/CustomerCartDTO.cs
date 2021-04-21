@@ -12,5 +12,8 @@ namespace API.DTOs
         [Required]
         public string Id { get; set; }
         public List<CartItemDTO> Items { get; set; }
+        public int? DeliveryId { get; set; }
+        public string ClientSecret { get; set; }
+        public string PaymentIntentId { get; set; }
     }
 }

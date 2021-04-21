@@ -159,3 +159,5 @@ D:\.NET Core\eCommerce\api\bin\Debug\net5.0\Microsoft.AspNetCore.Cryptography.Ke
 D:\.NET Core\eCommerce\api\bin\Debug\net5.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
 D:\.NET Core\eCommerce\api\bin\Debug\net5.0\Microsoft.Extensions.Identity.Core.dll
 D:\.NET Core\eCommerce\api\bin\Debug\net5.0\Microsoft.Extensions.Identity.Stores.dll
+D:\.NET Core\eCommerce\api\bin\Debug\net5.0\Newtonsoft.Json.dll
+D:\.NET Core\eCommerce\api\bin\Debug\net5.0\Stripe.net.dll
