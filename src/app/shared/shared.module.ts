@@ -10,9 +10,11 @@ import { NgxGalleryModule } from '@kolkov/ngx-gallery';
 import { OrderTotalsComponent } from './components/order-totals/order-totals.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { TextInputComponent } from './components/text-input/text-input.component';
+import { CdkStepperModule } from '@angular/cdk/stepper';
+import { StepperComponent } from './components/stepper/stepper.component'
 
 @NgModule({
-  declarations: [PagingHeaderComponent, PagerComponent, OrderTotalsComponent, TextInputComponent],
+  declarations: [PagingHeaderComponent, PagerComponent, OrderTotalsComponent, TextInputComponent, StepperComponent],
   imports: [
     CommonModule,
     PaginationModule.forRoot(),
@@ -20,6 +22,7 @@ import { TextInputComponent } from './components/text-input/text-input.component
     CarouselModule.forRoot(),
     MDBBootstrapModule.forRoot(),
     NgxGalleryModule,
+    CdkStepperModule,
     ReactiveFormsModule
   ],
   exports: [
@@ -32,7 +35,9 @@ import { TextInputComponent } from './components/text-input/text-input.component
     NgxGalleryModule,
     OrderTotalsComponent,
     ReactiveFormsModule,
-    TextInputComponent
+    CdkStepperModule,
+    TextInputComponent,
+    StepperComponent
   ]
 })
 export class SharedModule { }

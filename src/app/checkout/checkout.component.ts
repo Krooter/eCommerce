@@ -1,5 +1,5 @@
 import { AfterViewInit, Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
 import { Observable } from 'rxjs';
 import { AccountService } from '../account/account.service';
@@ -14,32 +14,32 @@ export class CheckoutComponent implements OnInit, AfterViewInit {
   timerSec: number = 59;
   timerMin: number = 9;
   interval: any;
-  shippingAddressFrom: FormGroup;
-  deliveryForm: FormGroup;
+  checkoutForm: FormGroup;
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private fb: FormBuilder) { }
 
   ngOnInit(): void {
-    this.startTimer();
-    this.createShippingAddressForm();
-    this.createDeliveryForm();
+    //this.startTimer();
+    this.createCheckOutForm();
   }
 
-  createShippingAddressForm(){
-    this.shippingAddressFrom = new FormGroup({
-      firstName: new FormControl('', Validators.required),
-      lastName: new FormControl('', Validators.required),
-      address: new FormControl('', Validators.required),
-      city: new FormControl('', Validators.required),
-      state: new FormControl('', Validators.required),
-      zipCode: new FormControl('', Validators.required),
+  createCheckOutForm(){
+    this.checkoutForm = this.fb.group({
+      shippingAddressForm: this.fb.group({
+        firstName: [null, Validators.required],
+        lastName: [null, Validators.required],
+        address: ['', Validators.required],
+        city: [null, Validators.required],
+        state: [null, Validators.required],
+        zipCode: [null, Validators.required]
+      }),
+      deliveryForm: this.fb.group({
+        deliveryMethod: ['', Validators.required]
+      }),
+      paymentForm: this.fb.group({
+        nameOnCard: ['', Validators.required]
+      })
     });
-  }
-
-  createDeliveryForm(){
-    this.deliveryForm = new FormGroup({
-      deliveryOption: new FormControl('', Validators.required)
-    })
   }
 
   ngAfterViewInit(): void {

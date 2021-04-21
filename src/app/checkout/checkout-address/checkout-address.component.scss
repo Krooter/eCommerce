@@ -1,0 +1,19 @@
+.shipping-address-box {
+    border: 1px solid black;
+    width: 100%;
+    padding: 30px 10px;
+}
+
+.btn-default {
+    background-color: black;
+    color: white;
+    outline: 0;
+    border: none;
+    padding: 3px 10px;
+    width: fit-content;
+    height: 50px;
+    font-weight: bold;
+    &:hover{
+        color:rgb(138, 137, 137)
+    }
+}

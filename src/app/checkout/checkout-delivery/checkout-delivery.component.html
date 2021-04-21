@@ -1,0 +1,11 @@
+<h1 class="shipping-address-text mt-4">DELIVERY OPTIONS</h1>
+<div class="shipping-address-box">
+    <form [formGroup]="checkoutForm">
+        <div formGroupName="deliveryMethod" *ngFor="let item of delivery">
+            <label class="check-container mr-5" style="display: inline-block;">
+                <input formControlName="deliveryOption" type="radio" name="deliveryOption" required>
+                <span class="checkdot"></span>
+            </label>
+        </div>
+    </form>
+</div>

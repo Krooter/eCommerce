@@ -1,0 +1,107 @@
+.shipping-address-box {
+  border: 1px solid black;
+  width: 100%;
+  padding: 30px 10px;
+}
+.check-container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.check-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: transparent;
+  border: 1px solid #ccc;
+  &:focus {
+    outline: none;
+  }
+}
+
+.check-container:hover input ~ .checkmark {
+  background-color: transparent;
+  outline: 1px solid black;
+}
+
+.check-container input:checked ~ .checkmark {
+  background-color: black;
+  outline: none;
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.check-container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.check-container .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.checkdot {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+}
+
+.check-container:hover input ~ .checkdot {
+  border: 1px solid black;
+}
+
+.check-container input:checked ~ .checkdot {
+  background-color: black;
+}
+
+.checkdot:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.check-container input:checked ~ .checkdot:after {
+  display: block;
+}
+
+.check-container .checkdot:after {
+  top: 7.9px;
+  left: 7.9px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: white;
+}

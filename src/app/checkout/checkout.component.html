@@ -5,56 +5,32 @@
         <div class="step" style="background-color: black;">2</div>
         <div class="step-text">Delivery</div>
         <div class="step" style="background-color: gray;">3</div>
-        <div class="step-text">Payment</div>
-        <div class="step" style="background-color: gray;">4</div>
         <div class="step-text">Order details</div>
+        <div class="step" style="background-color: gray;">4</div>
+        <div class="step-text">Payment</div>
     </div>
 </div>
 <div class="container">
     <div class="row">
         <div class="col-md-7">
-            <div class="box mt-5 timer-box">
+            <!-- <div class="box mt-5 timer-box">
                 <h2>PLEASE CHECKOUT BEFORE TIME EXPIRES:</h2>
                 <h1 class="timer">0{{timerMin}} : <span *ngIf="timerSec < 10">0</span>{{timerSec}}</h1>
-            </div>
-            <h1 class="shipping-address-text">SHIPPING ADDRESS</h1>
-            <div class="shipping-address-box">
-                <form [formGroup]="shippingAddressFrom">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <app-text-input formControlName="firstName" [label]="'First Name'"></app-text-input>
-                        </div>
-                        <div class="col-md-6">
-                            <app-text-input formControlName="lastName" [label]="'Last Name'"></app-text-input>
-                        </div>
-                        <div class="col-md-12">
-                            <app-text-input formControlName="address" [label]="'Address'"></app-text-input>
-                            <span class="text-muted ml-4" style="font-size: 14px;" *ngIf="!shippingAddressFrom.get('address').touched">Ex. Stefan Cel Mare 22/1</span>
-                        </div>
-                        
-                        <div class="col-md-6 mt-4">
-                            <app-text-input formControlName="city" [label]="'City/Town'"></app-text-input>
-                        </div>
-                        <div class="col-md-6 mt-4">
-                            <app-text-input formControlName="state" [label]="'State'"></app-text-input>
-                        </div>
-                        <div class="col-md-12">
-                            <app-text-input formControlName="zipCode" [label]="'Zip Code'"></app-text-input>
-                        </div>
-                    </div>
-                </form>
-            </div>
-            <h1 class="shipping-address-text">DELIVERY OPTIONS</h1>
-            <div class="shipping-address-box">
-                <form [formGroup]="deliveryForm">
-                    <div>
-                        <label class="check-container mr-5" style="display: inline-block;">
-                            <input formControlName="deliveryOption" type="radio" name="deliveryOption" required>
-                            <span class="checkdot"></span>
-                        </label>
-                    </div>
-                </form>
-            </div>
+            </div> -->
+            <app-stepper [linearModeSelected]="false" #appStepper>
+                <cdk-step [label]="'Address'">
+                    <app-checkout-address [checkoutForm]="checkoutForm"></app-checkout-address>
+                </cdk-step>
+                <cdk-step [label]="'Delivery'">
+                    <app-checkout-delivery [checkoutForm]="checkoutForm"></app-checkout-delivery>
+                </cdk-step>
+                <cdk-step [label]="'Review'">
+                    <app-checkout-review></app-checkout-review>
+                </cdk-step>
+                <cdk-step [label]="'Payment'">
+                    <app-checkout-payment></app-checkout-payment>
+                </cdk-step>
+            </app-stepper>
         </div>
         <div class="col-md-5" style="margin-top: 45px;">
             <app-order-totals></app-order-totals>
