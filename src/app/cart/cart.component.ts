@@ -13,12 +13,13 @@ import { CartService } from './cart.service';
 export class CartComponent implements OnInit {
   cart$: Observable<ICart>;
   currentUser$: Observable<IUser>;
-  
+
   constructor(private cartService: CartService, private accountService: AccountService) { }
 
   ngOnInit(): void {
     this.cart$ = this.cartService.cart$;
     this.currentUser$ = this.accountService.currentUser$;
+    this.cartService.shipping = 0;
   }
 
   removeCartItem(item: ICartItem){

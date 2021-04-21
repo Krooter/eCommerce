@@ -16,11 +16,12 @@ export class CheckoutComponent implements OnInit, AfterViewInit {
   interval: any;
   checkoutForm: FormGroup;
 
-  constructor(private router: Router, private fb: FormBuilder) { }
+  constructor(private router: Router, private fb: FormBuilder, private accountService: AccountService) { }
 
   ngOnInit(): void {
     //this.startTimer();
     this.createCheckOutForm();
+    this.getAddressFormValues();
   }
 
   createCheckOutForm(){
@@ -28,7 +29,7 @@ export class CheckoutComponent implements OnInit, AfterViewInit {
       shippingAddressForm: this.fb.group({
         firstName: [null, Validators.required],
         lastName: [null, Validators.required],
-        address: ['', Validators.required],
+        street: ['', Validators.required],
         city: [null, Validators.required],
         state: [null, Validators.required],
         zipCode: [null, Validators.required]
@@ -39,6 +40,16 @@ export class CheckoutComponent implements OnInit, AfterViewInit {
       paymentForm: this.fb.group({
         nameOnCard: ['', Validators.required]
       })
+    });
+  }
+
+  getAddressFormValues(){
+    this.accountService.getUserAddress().subscribe(address => {
+      if(address) {
+        this.checkoutForm.get('shippingAddressForm').patchValue(address);
+      }
+    }, error => {
+      console.log(error)
     });
   }
 

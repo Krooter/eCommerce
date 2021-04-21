@@ -1,1 +1,8 @@
-<p>checkout-payment works!</p>
+<div class="d-flex" style="justify-content: space-between;">
+    <button class="btn-default mt-4" cdkStepperPrevious>
+        <i class="fa fa-angle-left"></i> GO TO REVIEW
+    </button>
+    <button (click)="onSubmitOrder()" cdkStepperNext class="btn-default mt-4">
+        GO TO PAYMENT <i class="fa fa-angle-right"></i>
+    </button>
+</div>

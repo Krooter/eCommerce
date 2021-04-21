@@ -22,3 +22,17 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .toast-top-center {
     margin-top: 90px !important;
 }
+
+.btn-default {
+  background-color: black;
+  color: white;
+  outline: 0;
+  border: none;
+  padding: 3px 10px;
+  width: fit-content;
+  height: 50px;
+  font-weight: bold;
+  &:hover{
+      color:rgb(138, 137, 137)
+  }
+}

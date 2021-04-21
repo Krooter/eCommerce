@@ -4,6 +4,7 @@ import { BehaviorSubject } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
 import { Cart, ICart, ICartItem, ICartTotals } from '../shared/_models/cart';
+import { IDelivery } from '../shared/_models/delivery';
 import { IProduct } from '../shared/_models/product';
 
 @Injectable({
@@ -15,6 +16,7 @@ export class CartService {
   private cartTotalSource = new BehaviorSubject<ICartTotals>(null);
   cartTotal$ = this.cartTotalSource.asObservable();
   cart$ = this.cartSource.asObservable();
+  shipping = 0;
 
   constructor(private http: HttpClient) { }
 
@@ -89,9 +91,15 @@ export class CartService {
     })  
   }
 
+  deleteCartLocal(cartId: string){
+    this.cartSource.next(null);
+    this.cartTotalSource.next(null);
+    localStorage.removeItem('cart_id');
+    }
+
   private calculateTotals(){
     const cart = this.getCurrentCartValue();
-    const shipping = 0;
+    const shipping = this.shipping;
     const discount = 1;
     const subtotal = cart.items.reduce((a, b) =>(b.price * b.quantity) + a, 0);
     const total = (shipping + subtotal) * discount;
@@ -127,6 +135,11 @@ export class CartService {
       brand: item.productBrand,
       type: item.productType
     }
+  }
+  
+  setShippingPrice(delivery: IDelivery){
+    this.shipping = delivery.price;
+    this.calculateTotals();
   }
 }
 

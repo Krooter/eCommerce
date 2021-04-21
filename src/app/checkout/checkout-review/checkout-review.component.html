@@ -1,1 +1,40 @@
-<p>checkout-review works!</p>
+<div class="box">
+    <table style="width: 100%;">
+        <tr>
+            <th>
+
+            </th>
+            <th style="text-align: center;">
+                Product name
+            </th>
+            <th style="text-align: center;">
+                Price
+            </th>
+            <th style="text-align: center;">
+                Quantity
+            </th>
+        </tr>
+        <tr *ngFor="let item of (cart$ | async)?.items">
+            <td style="text-align: center; border: 2px solid #ccc; width: 10%;">
+                <img style="max-width: 80px;" src="{{item.pictureUrl}}">
+            </td>
+            <td style="text-align: center; border: 2px solid #ccc">
+                <strong class="text-muted">{{item.productName}}</strong>
+            </td>
+            <td style="text-align: center; border: 2px solid #ccc">
+                <strong class="text-danger">{{item.price * item.quantity | currency}}</strong>
+            </td>
+            <td style="text-align: center; border: 2px solid #ccc">
+                <strong>{{item.quantity}}</strong>
+            </td>
+        </tr>
+    </table>
+    <div class="d-flex" style="justify-content: space-between;">
+        <button class="btn-default mt-4" cdkStepperPrevious>
+            <i class="fa fa-angle-left"></i> GO TO DELIVERY
+        </button>
+        <button cdkStepperNext class="btn-default mt-4">
+            GO TO PAYMENT <i class="fa fa-angle-right"></i>
+        </button>
+    </div>
+</div>

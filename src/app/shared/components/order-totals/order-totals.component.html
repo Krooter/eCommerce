@@ -11,14 +11,14 @@
     <p class="text-description" style="margin-top: 20px;">
         PRICE: <span>{{(cartTotals$ | async)?.subtotal | currency}}</span>
     </p>
-    <p class="text-description" style="margin-top: 40px; margin-bottom: 10px;">
+    <p class="text-description" style="margin-top: 40px; margin-bottom: 10px;" *ngIf="(cartTotals$ | async).shipping === 0">
+        SHIPPING: <span style="align-content: flex-end;">FREE</span>
+    </p>
+    <p class="text-description" style="margin-top: 40px; margin-bottom: 10px;" *ngIf="(cartTotals$ | async).shipping !== 0">
         SHIPPING: <span style="align-content: flex-end;">{{(cartTotals$ | async)?.shipping | currency}}</span>
     </p>
     <hr />
     <p class="text-description" style="font-weight: bold;">
         ORDER TOTAL: <span>{{(cartTotals$ | async)?.total | currency}}</span>
     </p>
-    <button class="button-order" (click)="check()" routerLink="/checkout">
-        PROCEED TO CHECKOUT
-    </button>
 </div>

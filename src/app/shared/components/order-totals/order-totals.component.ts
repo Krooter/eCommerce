@@ -17,9 +17,4 @@ export class OrderTotalsComponent implements OnInit {
   ngOnInit(): void {
     this.cartTotals$ = this.cartService.cartTotal$;
   }
-
-  check(){
-    this.router.navigate(['checkout']);
-  }
-
 }

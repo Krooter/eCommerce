@@ -9,9 +9,9 @@
                 <app-text-input formControlName="lastName" [label]="'Last Name'"></app-text-input>
             </div>
             <div class="col-md-12">
-                <app-text-input formControlName="address" [label]="'Address'"></app-text-input>
+                <app-text-input formControlName="street" [label]="'Address'"></app-text-input>
                 <span class="text-muted ml-4" style="font-size: 14px;"
-                    *ngIf="!checkoutForm.get('shippingAddressForm.address').touched">Ex. Stefan Cel Mare
+                    *ngIf="!checkoutForm.get('shippingAddressForm.street').touched">Ex. Stefan Cel Mare
                     22/1</span>
             </div>
             <div class="col-md-6 mt-4">
@@ -23,9 +23,11 @@
             <div class="col-md-12">
                 <app-text-input formControlName="zipCode" [label]="'Zip Code'"></app-text-input>
             </div>
-            <div class="col-md-12 mt-2">
-                <button class="btn-default">SAVE AS DEFAULT</button>
-                <button class="btn-default ml-4">GO TO DELIVERY</button>
+            <div class="col-md-12 mt-2 d-flex" style="justify-content: space-between;">
+                <button class="btn-default" (click)="saveUserAddress()" [disabled]="!checkoutForm.get('shippingAddressForm').valid || !checkoutForm.get('shippingAddressForm').dirty">SAVE AS DEFAULT</button>
+                <button class="btn-default ml-4" cdkStepperNext>
+                    GO TO DELIVERY <i class="fa fa-angle-right"></i>
+                </button>
             </div>
         </div>
     </form>

@@ -1,4 +1,4 @@
-<div class="checkout-bar">
+<!-- <div class="checkout-bar">
     <div class="container" style="display: flex;">
         <div class="step" style="background-color: black;">1</div>
         <div class="step-text">Bag</div>
@@ -9,8 +9,8 @@
         <div class="step" style="background-color: gray;">4</div>
         <div class="step-text">Payment</div>
     </div>
-</div>
-<div class="container">
+</div> -->
+<div class="container" style="margin-top: 90px;">
     <div class="row">
         <div class="col-md-7">
             <!-- <div class="box mt-5 timer-box">
@@ -18,17 +18,17 @@
                 <h1 class="timer">0{{timerMin}} : <span *ngIf="timerSec < 10">0</span>{{timerSec}}</h1>
             </div> -->
             <app-stepper [linearModeSelected]="false" #appStepper>
-                <cdk-step [label]="'Address'">
+                <cdk-step [label]="'Address'" [completed]="(checkoutForm).get('shippingAddressForm').valid">
                     <app-checkout-address [checkoutForm]="checkoutForm"></app-checkout-address>
                 </cdk-step>
-                <cdk-step [label]="'Delivery'">
+                <cdk-step [label]="'Delivery'" [completed]="(checkoutForm).get('deliveryForm').valid">
                     <app-checkout-delivery [checkoutForm]="checkoutForm"></app-checkout-delivery>
                 </cdk-step>
                 <cdk-step [label]="'Review'">
                     <app-checkout-review></app-checkout-review>
                 </cdk-step>
                 <cdk-step [label]="'Payment'">
-                    <app-checkout-payment></app-checkout-payment>
+                    <app-checkout-payment [checkoutForm]="checkoutForm"></app-checkout-payment>
                 </cdk-step>
             </app-stepper>
         </div>

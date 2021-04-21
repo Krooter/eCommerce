@@ -1,11 +1,23 @@
 <h1 class="shipping-address-text mt-4">DELIVERY OPTIONS</h1>
 <div class="shipping-address-box">
     <form [formGroup]="checkoutForm">
-        <div formGroupName="deliveryMethod" *ngFor="let item of delivery">
+        <div formGroupName="deliveryForm" *ngFor="let item of delivery">
             <label class="check-container mr-5" style="display: inline-block;">
-                <input formControlName="deliveryOption" type="radio" name="deliveryOption" required>
+                <input checked id={{item.id}} value={{item.id}} formControlName="deliveryMethod" type="radio"
+                    (click)="setShippingPrice(item)" name="deliveryMethod" required>
                 <span class="checkdot"></span>
+                <strong>{{item.shortName}} - {{item.price | currency}}</strong>
+                <br>
+                <span class="label-description">{{item.description}}</span>
             </label>
         </div>
     </form>
+    <div class="d-flex" style="justify-content: space-between;">
+        <button class="btn-default" cdkStepperPrevious>
+            <i class="fa fa-angle-left"></i> GO TO ADDRESS 
+        </button>
+        <button class="btn-default ml-4" cdkStepperNext [disabled]="!checkoutForm.get('deliveryForm').valid">
+            GO TO REVIEW <i class="fa fa-angle-right"></i>
+        </button>
+    </div>
 </div>

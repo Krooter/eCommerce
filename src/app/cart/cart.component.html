@@ -41,6 +41,9 @@
         </div>
         <div class="col-md-5" style="margin-bottom: 20px;">
             <app-order-totals></app-order-totals>
+            <button *ngIf="(cart$ | async)?.items" class="button-order" routerLink="/checkout">
+                PROCEED TO CHECKOUT
+            </button>
         </div>
     </div>
     

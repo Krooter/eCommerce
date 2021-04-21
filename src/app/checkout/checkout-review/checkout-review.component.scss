@@ -1,0 +1,9 @@
+.box {
+    border: 1px solid black;
+    width: 100%;
+    padding: 30px 10px;
+}
+
+button:disabled {
+    background-color: gray;
+}

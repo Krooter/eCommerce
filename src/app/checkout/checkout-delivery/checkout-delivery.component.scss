@@ -3,6 +3,11 @@
   width: 100%;
   padding: 30px 10px;
 }
+
+button:disabled {
+  background-color: gray;
+}
+
 .check-container {
   display: block;
   position: relative;
