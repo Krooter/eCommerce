@@ -1,12 +1,11 @@
 ﻿using Core.Entities;
 using Core.Entities.Order;
 using Core.Interfaces;
+using Core.Specification;
 using Microsoft.Extensions.Configuration;
 using Stripe;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Data.Services
@@ -80,6 +79,36 @@ namespace Data.Services
                 return cart;
             }
             return cart;
+        }
+
+        public async Task<Core.Entities.Order.Order> UpdateOrderPaymentFailed(string paymentIntentId)
+        {
+            var spec = new OrderIntentId(paymentIntentId);
+            var order = await _unitOfWork.Repository<Core.Entities.Order.Order>().GetEntityWithSpec(spec);
+
+            if (order == null) return null;
+
+            order.Status = OrderStatus.PaymentFailed;
+
+            await _unitOfWork.Complete();
+
+            return order;
+
+        }
+
+        public async Task<Core.Entities.Order.Order> UpdateOrderPaymentSucceeded(string paymentIntentId)
+        {
+            var spec = new OrderIntentId(paymentIntentId);
+            var order = await _unitOfWork.Repository<Core.Entities.Order.Order>().GetEntityWithSpec(spec);
+
+            if (order == null) return null;
+
+            order.Status = OrderStatus.PaymentRecived;
+            _unitOfWork.Repository<Core.Entities.Order.Order>().Update(order);
+
+            await _unitOfWork.Complete();
+
+            return order;
         }
     }
 }
