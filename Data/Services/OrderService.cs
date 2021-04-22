@@ -13,11 +13,13 @@ namespace Data.Services
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly ICartRepository _cartRepo;
+        private readonly IPaymentService _paymentService;
 
-        public OrderService(IUnitOfWork unitOfWork, ICartRepository cartRepo)
+        public OrderService(IUnitOfWork unitOfWork, ICartRepository cartRepo, IPaymentService paymentService)
         {
             _unitOfWork = unitOfWork;
             _cartRepo = cartRepo;
+            _paymentService = paymentService;
         }
 
         public async Task<Order> CreateOrderAsync(string buyerEmail, int deliveryId, string cartId, Address shippingAddress)
@@ -41,18 +43,25 @@ namespace Data.Services
             
             //calc subtotal
             var subtotal = items.Sum(item => item.Price * item.Quantity);
-            
+
+            //check if order exist
+            var spec = new OrderIntentId(cart.PaymentIntentId);
+            var existingOrder = await _unitOfWork.Repository<Order>().GetEntityWithSpec(spec);
+
+            if(existingOrder != null)
+            {
+                _unitOfWork.Repository<Order>().Delete(existingOrder);
+                await _paymentService.CreateOrUpdatePaymentIntent(cart.PaymentIntentId);
+            }
+
             //create order
-            var order = new Order(items, buyerEmail, shippingAddress, delivery, subtotal);
+            var order = new Order(items, buyerEmail, shippingAddress, delivery, subtotal, cart.PaymentIntentId);
             _unitOfWork.Repository<Order>().Add(order);
 
             //save to db
             var result = await _unitOfWork.Complete();
 
             if (result <= 0) return null;
-
-            //delete cart
-            await _cartRepo.DeleteCartAsync(cartId);
 
             //return order
             return order;

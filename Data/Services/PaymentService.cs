@@ -28,6 +28,9 @@ namespace Data.Services
             StripeConfiguration.ApiKey = _configuration["StripeSettings:SecretKey"];
 
             var cart = await _cartRepository.GetCartAsync(cartId);
+
+            if (cart == null) return null;
+
             var shippingPrice = 0m;
 
             if (cart.DeliveryId.HasValue)
