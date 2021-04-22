@@ -4,6 +4,10 @@ import { IPhoto } from './photo';
 export interface ICart {
     id: string;
     items: ICartItem[];
+    clientSecret?: string;
+    paymentIntentId?: string;
+    deliveryId?: number;
+    shippingPrice?: number;
   }
   
 export interface ICartItem {

@@ -3,6 +3,7 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 import { Router, RouterLink } from '@angular/router';
 import { Observable } from 'rxjs';
 import { AccountService } from '../account/account.service';
+import { CartService } from '../cart/cart.service';
 import { IUser } from '../shared/_models/user';
 
 @Component({
@@ -16,12 +17,13 @@ export class CheckoutComponent implements OnInit, AfterViewInit {
   interval: any;
   checkoutForm: FormGroup;
 
-  constructor(private router: Router, private fb: FormBuilder, private accountService: AccountService) { }
+  constructor(private router: Router, private fb: FormBuilder, private accountService: AccountService, private cartService: CartService) { }
 
   ngOnInit(): void {
     //this.startTimer();
     this.createCheckOutForm();
     this.getAddressFormValues();
+    this.getDeliveryValue();
   }
 
   createCheckOutForm(){
@@ -51,6 +53,13 @@ export class CheckoutComponent implements OnInit, AfterViewInit {
     }, error => {
       console.log(error)
     });
+  }
+
+  getDeliveryValue(){
+    const cart = this.cartService.getCurrentCartValue();
+    if (cart?.deliveryId !== null){
+      this.checkoutForm.get('deliveryForm').get('deliveryMethod').patchValue(cart.deliveryId.toString());
+    }
   }
 
   ngAfterViewInit(): void {

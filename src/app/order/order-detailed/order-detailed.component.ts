@@ -14,7 +14,6 @@ export class OrderDetailedComponent implements OnInit {
   constructor(private route: ActivatedRoute, private orderService: OrderService) { }
 
   ngOnInit(): void {
-    console.log(+this.route.snapshot.paramMap.get('id'));
     this.orderService.getOrderDetailed(+this.route.snapshot.paramMap.get('id')).subscribe((order: IOrder) => {
       this.order = order;
     }, error => {

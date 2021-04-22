@@ -17,7 +17,7 @@
                 <h2>PLEASE CHECKOUT BEFORE TIME EXPIRES:</h2>
                 <h1 class="timer">0{{timerMin}} : <span *ngIf="timerSec < 10">0</span>{{timerSec}}</h1>
             </div> -->
-            <app-stepper [linearModeSelected]="false" #appStepper>
+            <app-stepper [linearModeSelected]="true" #appStepper>
                 <cdk-step [label]="'Address'" [completed]="(checkoutForm).get('shippingAddressForm').valid">
                     <app-checkout-address [checkoutForm]="checkoutForm"></app-checkout-address>
                 </cdk-step>
@@ -25,7 +25,7 @@
                     <app-checkout-delivery [checkoutForm]="checkoutForm"></app-checkout-delivery>
                 </cdk-step>
                 <cdk-step [label]="'Review'">
-                    <app-checkout-review></app-checkout-review>
+                    <app-checkout-review [appStepper]="appStepper"></app-checkout-review>
                 </cdk-step>
                 <cdk-step [label]="'Payment'">
                     <app-checkout-payment [checkoutForm]="checkoutForm"></app-checkout-payment>

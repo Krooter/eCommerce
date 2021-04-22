@@ -20,11 +20,21 @@ export class CartService {
 
   constructor(private http: HttpClient) { }
 
+  createPaymentIntent(){
+    return this.http.post(this.baseUrl + 'payment/' + this.getCurrentCartValue().id, {})
+      .pipe(
+        map((cart: ICart) => {
+          this.cartSource.next(cart);
+        })
+      )
+  }
+
   getCart(id: string){
     return this.http.get(this.baseUrl + 'cart?id=' + id)
       .pipe(
         map((cart: ICart) => {
           this.cartSource.next(cart);
+          this.shipping = cart.shippingPrice;
           this.calculateTotals();
         })
       );
@@ -139,7 +149,11 @@ export class CartService {
   
   setShippingPrice(delivery: IDelivery){
     this.shipping = delivery.price;
+    const cart = this.getCurrentCartValue();
+    cart.deliveryId = delivery.id;
+    cart.shippingPrice = delivery.price;
     this.calculateTotals();
+    this.setCart(cart);
   }
 }
 

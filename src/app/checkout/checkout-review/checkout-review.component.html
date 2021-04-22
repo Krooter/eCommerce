@@ -33,7 +33,7 @@
         <button class="btn-default mt-4" cdkStepperPrevious>
             <i class="fa fa-angle-left"></i> GO TO DELIVERY
         </button>
-        <button cdkStepperNext class="btn-default mt-4">
+        <button class="btn-default mt-4" (click)="createPaymentIntent()">
             GO TO PAYMENT <i class="fa fa-angle-right"></i>
         </button>
     </div>
