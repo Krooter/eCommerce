@@ -35,11 +35,6 @@ jobs:
     ports:
       - 5432:5432
 
-  adminer:
-    image: adminer
-    restart: always
-    ports:
-      - 8080:8080
     steps:
       - checkout
       - run: ssh -oStrictHostKeyChecking=no -v $USER@$161.35.74.202 "./deploy.sh"
