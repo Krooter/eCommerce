@@ -42,9 +42,19 @@ namespace Data.Services
             {
                 var productItem = await _unitOfWork.Repository<Core.Entities.Product>().GetByIdAsync(item.Id);
 
-                if(item.Price != productItem.Price)
+                if (productItem.IsOnSale)
                 {
-                    item.Price = productItem.Price;
+                    if (item.Price != productItem.GetSalePrice())
+                    {
+                        item.Price = productItem.GetSalePrice();
+                    }
+                } 
+                else
+                {
+                    if (item.Price != productItem.Price)
+                    {
+                        item.Price = productItem.Price;
+                    }
                 }
 
                 var service = new PaymentIntentService();

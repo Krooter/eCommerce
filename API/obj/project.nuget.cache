@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "fc5wPfMQ4ecrfARFRY6RAN6qLqLX9OhqeKMMajwI6E/6PviOyip5UmSFHduH26e+aLBq7Yk6QEvdbwYYpJpOqg==",
+  "dgSpecHash": "XzxIufYrLnoC9mW2pyMFxEwf4IUBtJ1DX/GYohIv60RQQvPQWbRhkMw5s/P8TyEtdwU0/U5q4BB22Y+nwBw2eg==",
   "success": true,
-  "projectFilePath": "D:\\.NET Core\\eCommerce\\api\\API.csproj",
+  "projectFilePath": "D:\\.NET Core\\eCommerce\\APi\\API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\cpole\\.nuget\\packages\\automapper\\10.1.1\\automapper.10.1.1.nupkg.sha512",
     "C:\\Users\\cpole\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\8.1.1\\automapper.extensions.microsoft.dependencyinjection.8.1.1.nupkg.sha512",
@@ -64,6 +64,8 @@
     "C:\\Users\\cpole\\.nuget\\packages\\microsoft.win32.registry\\5.0.0\\microsoft.win32.registry.5.0.0.nupkg.sha512",
     "C:\\Users\\cpole\\.nuget\\packages\\microsoft.win32.systemevents\\5.0.0\\microsoft.win32.systemevents.5.0.0.nupkg.sha512",
     "C:\\Users\\cpole\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
+    "C:\\Users\\cpole\\.nuget\\packages\\npgsql\\5.0.4\\npgsql.5.0.4.nupkg.sha512",
+    "C:\\Users\\cpole\\.nuget\\packages\\npgsql.entityframeworkcore.postgresql\\5.0.5.1\\npgsql.entityframeworkcore.postgresql.5.0.5.1.nupkg.sha512",
     "C:\\Users\\cpole\\.nuget\\packages\\pipelines.sockets.unofficial\\2.2.0\\pipelines.sockets.unofficial.2.2.0.nupkg.sha512",
     "C:\\Users\\cpole\\.nuget\\packages\\sqlitepclraw.bundle_e_sqlite3\\2.0.4\\sqlitepclraw.bundle_e_sqlite3.2.0.4.nupkg.sha512",
     "C:\\Users\\cpole\\.nuget\\packages\\sqlitepclraw.core\\2.0.4\\sqlitepclraw.core.2.0.4.nupkg.sha512",
@@ -86,6 +88,7 @@
     "C:\\Users\\cpole\\.nuget\\packages\\system.io.pipelines\\5.0.0\\system.io.pipelines.5.0.0.nupkg.sha512",
     "C:\\Users\\cpole\\.nuget\\packages\\system.memory\\4.5.3\\system.memory.4.5.3.nupkg.sha512",
     "C:\\Users\\cpole\\.nuget\\packages\\system.reflection.emit\\4.7.0\\system.reflection.emit.4.7.0.nupkg.sha512",
+    "C:\\Users\\cpole\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\4.6.0\\system.runtime.compilerservices.unsafe.4.6.0.nupkg.sha512",
     "C:\\Users\\cpole\\.nuget\\packages\\system.security.accesscontrol\\5.0.0\\system.security.accesscontrol.5.0.0.nupkg.sha512",
     "C:\\Users\\cpole\\.nuget\\packages\\system.security.cryptography.cng\\4.5.0\\system.security.cryptography.cng.4.5.0.nupkg.sha512",
     "C:\\Users\\cpole\\.nuget\\packages\\system.security.cryptography.pkcs\\4.5.0\\system.security.cryptography.pkcs.4.5.0.nupkg.sha512",

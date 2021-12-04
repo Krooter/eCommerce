@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Core.Entities.Order
+﻿namespace Core.Entities.Order
 {
     public class OrderItem : BaseEntity
     {
@@ -12,15 +6,17 @@ namespace Core.Entities.Order
         {
         }
 
-        public OrderItem(ProductItemOrdered itemOrdered, decimal price, int quantity)
+        public OrderItem(ProductItemOrdered itemOrdered, decimal price, int quantity, decimal salePrice)
         {
             ItemOrdered = itemOrdered;
             Price = price;
             Quantity = quantity;
+            SalePrice = salePrice;
         }
 
         public ProductItemOrdered ItemOrdered { get; set; }
         public decimal Price { get; set; }
+        public decimal SalePrice { get; set; }
         public int Quantity { get; set; }
     }
 }

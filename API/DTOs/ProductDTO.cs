@@ -16,6 +16,9 @@ namespace API.DTOs
         public string ProductBrand { get; set; }
         public int ProductCategoryId { get; set; }
         public string ProductCategory { get; set; }
+        public decimal Discount { get; set; }
+        public bool IsOnSale { get; set; }
+        public decimal SalePrice { get; set; }
         public DateTime DateAdded { get; set; }
         public ICollection<PhotoDTO> Photo { get; set; }
     }

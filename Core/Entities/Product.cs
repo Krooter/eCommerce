@@ -15,6 +15,13 @@ namespace Core.Entities
         public ProductCategory ProductCategory { get; set; }
         public int ProductCategoryId { get; set; }
         public DateTime DateAdded { get; set; } = DateTime.UtcNow;
+        public decimal Discount { get; set; } 
+        public bool IsOnSale { get; set; } = false;
         public ICollection<Photo> Photo { get; set; }
+
+        public decimal GetSalePrice()
+        {
+            return this.Price - ((this.Price * this.Discount) / 100);
+        }
     }
 }

@@ -26,7 +26,7 @@ namespace Data.Services
         {
             //get cart from repo
             var cart = await _cartRepo.GetCartAsync(cartId);
-           
+            decimal subtotal = 0;
             //get items from product repo
             var items = new List<OrderItem>();
             foreach(var item in cart.Items)
@@ -34,15 +34,22 @@ namespace Data.Services
                 var productItem = await _unitOfWork.Repository<Product>().GetByIdAsync(item.Id);
                 var photo = await _unitOfWork.Repository<Photo>().GetByIdAsync(item.Id);
                 var itemOrdered = new ProductItemOrdered(productItem.Id, productItem.Name, photo.PhotoUrl1);
-                var orderItem = new OrderItem(itemOrdered, productItem.Price, item.Quantity);
+                var orderItem = new OrderItem(itemOrdered, productItem.Price, item.Quantity, item.SalePrice);
                 items.Add(orderItem);
+
+                //calc subtotal
+                if (item.IsOnSale)
+                {
+                    subtotal = items.Sum(item => item.SalePrice * item.Quantity);
+                }
+                if (!item.IsOnSale)
+                {
+                    subtotal = items.Sum(item => item.Price * item.Quantity);
+                }
             }
             
             //get delivery from repo
             var delivery = await _unitOfWork.Repository<Delivery>().GetByIdAsync(deliveryId);
-            
-            //calc subtotal
-            var subtotal = items.Sum(item => item.Price * item.Quantity);
 
             //check if order exist
             var spec = new OrderIntentId(cart.PaymentIntentId);

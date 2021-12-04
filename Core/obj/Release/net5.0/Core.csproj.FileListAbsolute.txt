@@ -1,0 +1,15 @@
+D:\.NET Core\eCommerce\Core\bin\Release\net5.0\Core.deps.json
+D:\.NET Core\eCommerce\Core\bin\Release\net5.0\Core.runtimeconfig.json
+D:\.NET Core\eCommerce\Core\bin\Release\net5.0\Core.runtimeconfig.dev.json
+D:\.NET Core\eCommerce\Core\bin\Release\net5.0\Core.dll
+D:\.NET Core\eCommerce\Core\bin\Release\net5.0\ref\Core.dll
+D:\.NET Core\eCommerce\Core\bin\Release\net5.0\Core.pdb
+D:\.NET Core\eCommerce\Core\obj\Release\net5.0\Core.GeneratedMSBuildEditorConfig.editorconfig
+D:\.NET Core\eCommerce\Core\obj\Release\net5.0\Core.AssemblyInfoInputs.cache
+D:\.NET Core\eCommerce\Core\obj\Release\net5.0\Core.AssemblyInfo.cs
+D:\.NET Core\eCommerce\Core\obj\Release\net5.0\Core.csproj.CoreCompileInputs.cache
+D:\.NET Core\eCommerce\Core\obj\Release\net5.0\Core.dll
+D:\.NET Core\eCommerce\Core\obj\Release\net5.0\ref\Core.dll
+D:\.NET Core\eCommerce\Core\obj\Release\net5.0\Core.pdb
+D:\.NET Core\eCommerce\Core\obj\Release\net5.0\Core.genruntimeconfig.cache
+D:\.NET Core\eCommerce\Core\obj\Release\net5.0\Core.csprojAssemblyReference.cache

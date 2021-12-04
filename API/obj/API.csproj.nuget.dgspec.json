@@ -1,21 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "D:\\.NET Core\\eCommerce\\api\\API.csproj": {}
+    "D:\\.NET Core\\eCommerce\\APi\\API.csproj": {}
   },
   "projects": {
-    "D:\\.NET Core\\eCommerce\\api\\API.csproj": {
+    "D:\\.NET Core\\eCommerce\\APi\\API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\.NET Core\\eCommerce\\api\\API.csproj",
+        "projectUniqueName": "D:\\.NET Core\\eCommerce\\APi\\API.csproj",
         "projectName": "API",
-        "projectPath": "D:\\.NET Core\\eCommerce\\api\\API.csproj",
+        "projectPath": "D:\\.NET Core\\eCommerce\\APi\\API.csproj",
         "packagesPath": "C:\\Users\\cpole\\.nuget\\packages\\",
-        "outputPath": "D:\\.NET Core\\eCommerce\\api\\obj\\",
+        "outputPath": "D:\\.NET Core\\eCommerce\\APi\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+        ],
         "configFilePaths": [
           "C:\\Users\\cpole\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
@@ -103,7 +107,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     },
@@ -116,9 +120,13 @@
         "packagesPath": "C:\\Users\\cpole\\.nuget\\packages\\",
         "outputPath": "D:\\.NET Core\\eCommerce\\Core\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+        ],
         "configFilePaths": [
           "C:\\Users\\cpole\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
@@ -185,7 +193,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     },
@@ -198,9 +206,13 @@
         "packagesPath": "C:\\Users\\cpole\\.nuget\\packages\\",
         "outputPath": "D:\\.NET Core\\eCommerce\\Data\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+        ],
         "configFilePaths": [
           "C:\\Users\\cpole\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
@@ -255,6 +267,10 @@
               "target": "Package",
               "version": "[6.10.0, )"
             },
+            "Npgsql.EntityFrameworkCore.PostgreSQL": {
+              "target": "Package",
+              "version": "[5.0.5.1, )"
+            },
             "StackExchange.Redis": {
               "target": "Package",
               "version": "[2.2.4, )"
@@ -283,7 +299,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     }

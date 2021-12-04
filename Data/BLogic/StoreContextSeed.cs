@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text.Json;
 using System.Threading.Tasks;
 
@@ -16,9 +17,11 @@ namespace Data.BLogic
         {
             try
             {
+                var path = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+
                 if (!context.ProductBrands.Any())
                 {
-                    var brandsData = File.ReadAllText("../Data/BLogic/Seed/brands.json");
+                    var brandsData = File.ReadAllText(path + @"/BLogic/Seed/brands.json");
 
                     var brands = JsonSerializer.Deserialize<List<ProductBrand>>(brandsData);
 
@@ -32,7 +35,7 @@ namespace Data.BLogic
 
                 if (!context.ProductTypes.Any())
                 {
-                    var typesData = File.ReadAllText("../Data/BLogic/Seed/types.json");
+                    var typesData = File.ReadAllText(path + @"/BLogic/Seed/types.json");
 
                     var types = JsonSerializer.Deserialize<List<ProductType>>(typesData);
 
@@ -46,7 +49,7 @@ namespace Data.BLogic
 
                 if (!context.ProductCategories.Any())
                 {
-                    var categoriesData = File.ReadAllText("../Data/BLogic/Seed/category.json");
+                    var categoriesData = File.ReadAllText(path + @"/BLogic/Seed/category.json");
 
                     var categories = JsonSerializer.Deserialize<List<ProductCategory>>(categoriesData);
 
@@ -60,7 +63,7 @@ namespace Data.BLogic
 
                 if (!context.Products.Any())
                 {
-                    var productsData = File.ReadAllText("../Data/BLogic/Seed/products.json");
+                    var productsData = File.ReadAllText(path + @"/BLogic/Seed/products.json");
 
                     var products = JsonSerializer.Deserialize<List<Product>>(productsData);
 
@@ -74,7 +77,7 @@ namespace Data.BLogic
 
                 if (!context.Delivery.Any())
                 {
-                    var deliveryData = File.ReadAllText("../Data/BLogic/Seed/delivery.json");
+                    var deliveryData = File.ReadAllText(path + @"/BLogic/Seed/delivery.json");
 
                     var delivery = JsonSerializer.Deserialize<List<Delivery>>(deliveryData);
 
