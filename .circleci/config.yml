@@ -7,7 +7,7 @@ version: 2.1
 jobs:
   # Below is the definition of your job to build and test your app, you can rename and customize it as you want.
   pull-and-build:
-    redis:
+   docker:
     image: redis:latest
     ports:
       - 6379:6379
@@ -15,7 +15,7 @@ jobs:
     volumes:
       - redis-data:/data
 
-  redis-commander:
+  docker:
     image: rediscommander/redis-commander:latest
     environment:
       - REDIS_HOSTS=local:redis:6379
@@ -26,7 +26,7 @@ jobs:
     depends_on:
       - redis
 
-  db:
+  docker:
     image: postgres
     restart: always
     environment:
@@ -35,6 +35,11 @@ jobs:
     ports:
       - 5432:5432
 
+  docker:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
     steps:
       - checkout
       - run: ssh -oStrictHostKeyChecking=no -v $USER@$161.35.74.202 "./deploy.sh"
