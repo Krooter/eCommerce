@@ -2,10 +2,15 @@
 # See: https://circleci.com/docs/2.0/configuration-reference
 version: 2.1
 
-services:
-  redis:
-    image: redis:latest
-    ports:
+# Define a job to be invoked later in a workflow.
+# See: https://circleci.com/docs/2.0/configuration-reference/#jobs
+jobs:
+  # Below is the definition of your job to build and test your app, you can rename and customize it as you want.
+  pull-and-build:
+    docker:
+      redis:
+        image: redis:latest
+         ports:
       - 6379:6379
     command: ["redis-server", "--appendonly", "yes"]
     volumes:
@@ -37,15 +42,6 @@ services:
     ports:
       - 8080:8080
 
-volumes:
-  redis-data:
-# Define a job to be invoked later in a workflow.
-# See: https://circleci.com/docs/2.0/configuration-reference/#jobs
-jobs:
-  # Below is the definition of your job to build and test your app, you can rename and customize it as you want.
-  pull-and-build:
-    docker:
-      - image: arvindr226/alpine-ssh
     steps:
       - checkout
       - run: ssh -oStrictHostKeyChecking=no -v $USER@$161.35.74.202 "./deploy.sh"
